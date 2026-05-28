@@ -11,8 +11,9 @@ const WordManagerPage = {
           <button class="btn-primary" id="addWordBtn">+ 添加单词</button>
           <label class="btn-outline upload-label">
             📁 上传文件导入
-            <input type="file" id="fileUpload" accept=".txt,.docx" hidden>
+            <input type="file" id="fileUpload" accept=".txt,.docx,.json" hidden>
           </label>
+          <button class="btn-outline" id="exportWordsBtn">📤 导出词汇表</button>
           <button class="btn-outline" id="resetWordsBtn">恢复默认</button>
         </div>
 
@@ -72,13 +73,18 @@ const WordManagerPage = {
       const file = e.target.files[0];
       if (!file) return;
       try {
-        let text;
-        if (file.name.endsWith('.docx')) {
-          text = await this.parseDocx(file);
+        let parsed;
+        if (file.name.endsWith('.json')) {
+          const text = await file.text();
+          parsed = JSON.parse(text);
+          if (!Array.isArray(parsed)) { alert('JSON 格式错误：需要单词数组'); return; }
+        } else if (file.name.endsWith('.docx')) {
+          const text = await this.parseDocx(file);
+          parsed = this.parseWords(text);
         } else {
-          text = await file.text();
+          const text = await file.text();
+          parsed = this.parseWords(text);
         }
-        const parsed = this.parseWords(text);
         if (parsed.length === 0) { alert('未能从文件中解析到单词'); return; }
         const maxId = App.words.length > 0 ? Math.max(...App.words.map(w => w.id)) : 0;
         parsed.forEach((w, i) => { w.id = maxId + i + 1; });
@@ -88,6 +94,19 @@ const WordManagerPage = {
       } catch (err) {
         alert('文件解析失败: ' + err.message);
       }
+    });
+
+    document.getElementById('exportWordsBtn').addEventListener('click', () => {
+      const data = JSON.stringify(App.words, null, 2);
+      const blob = new Blob([data], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'cet6-words.json';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
     });
 
     document.getElementById('resetWordsBtn').addEventListener('click', () => {
