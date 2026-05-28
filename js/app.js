@@ -3,6 +3,7 @@ const App = {
   wrongIds: [],
   favoriteIds: [],
   currentTab: 'quiz',
+  quizMode: 'single',
   reviewMode: false,
   reviewRemaining: [],
 
