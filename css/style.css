@@ -121,15 +121,6 @@ body {
   box-shadow: var(--shadow-outer);
 }
 
-.btn-icon-svg {
-  width: 18px;
-  height: 18px;
-  flex-shrink: 0;
-}
-
-/* ============================================
-   App Container
-   ============================================ */
 .app-container {
   width: var(--container-width);
   min-height: 800px;
@@ -218,14 +209,13 @@ body {
   color: var(--color-primary);
 }
 
-.tab-icon-svg {
-  width: 22px;
-  height: 22px;
+.tab-icon {
+  font-size: 20px;
   transition: transform var(--transition-bounce);
 }
 
-.tab-btn.active .tab-icon-svg {
-  transform: scale(1.1);
+.tab-btn.active .tab-icon {
+  transform: scale(1.15);
 }
 
 .tab-label {
@@ -422,22 +412,6 @@ body {
   color: #B45309;
 }
 
-.fav-btn.favorited {
-  border-color: var(--color-warning);
-  background: var(--color-warning-bg);
-  color: #B45309;
-  box-shadow: 0 0 0 4px rgba(245,158,11,0.08);
-}
-
-.fav-icon-svg {
-  width: 20px;
-  height: 20px;
-  transition: transform var(--transition-bounce);
-}
-
-.fav-btn:hover .fav-icon-svg {
-  transform: scale(1.15);
-}
 
 /* ============================================
    Empty State
@@ -792,6 +766,23 @@ body {
   text-align: right;
 }
 
+/* Inline Edit */
+.edit-input {
+  width: 100%;
+  padding: 8px 10px;
+  font-size: 14px;
+}
+.save-edit-btn:hover {
+  border-color: var(--color-success);
+  color: var(--color-success);
+  background: var(--color-success-bg);
+}
+.cancel-edit-btn:hover {
+  border-color: var(--color-text-muted);
+  color: var(--color-text-muted);
+  background: #F8F9FC;
+}
+
 /* ============================================
    Responsive Tweaks
    ============================================ */
@@ -806,10 +797,6 @@ body {
     font-size: 12px;
     gap: 4px;
     border-radius: 10px;
-  }
-  .btn-icon-svg {
-    width: 16px;
-    height: 16px;
   }
   .quiz-word {
     margin-bottom: 32px;

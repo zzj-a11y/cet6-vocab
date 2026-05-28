@@ -113,16 +113,49 @@ const WordManagerPage = {
       btn.addEventListener('click', () => {
         const id = Number(btn.dataset.id);
         const word = App.words.find(w => w.id === id);
-        const newEn = prompt('修改英文:', word.english);
-        if (newEn === null) return;
-        const newZh = prompt('修改中文:', word.chinese);
-        if (newZh === null) return;
-        word.english = newEn.trim() || word.english;
-        word.chinese = newZh.trim() || word.chinese;
-        App.saveWords();
-        this.render(container);
+        const row = btn.closest('tr');
+        const enCell = row.cells[0];
+        const zhCell = row.cells[1];
+        const actionCell = row.cells[2];
+        const oldEn = enCell.textContent;
+        const oldZh = zhCell.textContent;
+
+        enCell.innerHTML = `<input type="text" class="form-input edit-input" value="${this.escapeHtml(oldEn)}">`;
+        zhCell.innerHTML = `<input type="text" class="form-input edit-input" value="${this.escapeHtml(oldZh)}">`;
+        actionCell.innerHTML = `
+          <button class="btn-sm save-edit-btn" data-id="${id}" data-old-en="${this.escapeAttr(oldEn)}" data-old-zh="${this.escapeAttr(oldZh)}">保存</button>
+          <button class="btn-sm cancel-edit-btn" data-id="${id}" data-old-en="${this.escapeAttr(oldEn)}" data-old-zh="${this.escapeAttr(oldZh)}">取消</button>
+        `;
+
+        row.querySelector('.save-edit-btn').addEventListener('click', () => {
+          const newEn = enCell.querySelector('input').value.trim();
+          const newZh = zhCell.querySelector('input').value.trim();
+          if (!newEn || !newZh) { alert('请填写完整'); return; }
+          word.english = newEn;
+          word.chinese = newZh;
+          App.saveWords();
+          this.render(container);
+        });
+
+        row.querySelector('.cancel-edit-btn').addEventListener('click', () => {
+          word.english = oldEn;
+          word.chinese = oldZh;
+          this.render(container);
+        });
+
+        enCell.querySelector('input').focus();
       });
     });
+  },
+
+  escapeHtml(str) {
+    const div = document.createElement('div');
+    div.textContent = str;
+    return div.innerHTML;
+  },
+
+  escapeAttr(str) {
+    return str.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/'/g, '&#39;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
   },
 
   parseWords(text) {
