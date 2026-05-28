@@ -1,35 +1,2117 @@
 [
-  { "id": 1, "english": "instruction", "chinese": "指导，指示" },
-  { "id": 2, "english": "supervision", "chinese": "监督，管理" },
-  { "id": 3, "english": "supervisor", "chinese": "监督者，管理者" },
-  { "id": 4, "english": "adequate", "chinese": "足够的，适当的" },
-  { "id": 5, "english": "merit", "chinese": "优点" },
-  { "id": 6, "english": "appreciate", "chinese": "感激，欣赏" },
-  { "id": 7, "english": "colleague", "chinese": "同事" },
-  { "id": 8, "english": "offend", "chinese": "冒犯，得罪" },
-  { "id": 9, "english": "urge", "chinese": "敦促，催促" },
-  { "id": 10, "english": "degree", "chinese": "度，学位" },
-  { "id": 11, "english": "profound", "chinese": "深刻的，极大的" },
-  { "id": 12, "english": "realize", "chinese": "实现，获得，意识到" },
-  { "id": 13, "english": "branch", "chinese": "分支" },
-  { "id": 14, "english": "conductive", "chinese": "有助于，有益于" },
-  { "id": 15, "english": "institution", "chinese": "机构，制度" },
-  { "id": 16, "english": "picnic", "chinese": "野餐，轻松" },
-  { "id": 17, "english": "trustworthy", "chinese": "值得信任的" },
-  { "id": 18, "english": "prevent", "chinese": "阻止" },
-  { "id": 19, "english": "hacker", "chinese": "黑客" },
-  { "id": 20, "english": "crack", "chinese": "爆发，裂开" },
-  { "id": 21, "english": "guide", "chinese": "指导" },
-  { "id": 22, "english": "guideline", "chinese": "指导方针" },
-  { "id": 23, "english": "anticipate", "chinese": "预期，预料" },
-  { "id": 24, "english": "intricacy", "chinese": "错综复杂" },
-  { "id": 25, "english": "incentive", "chinese": "激励" },
-  { "id": 26, "english": "application", "chinese": "申请，用途，应用软件" },
-  { "id": 27, "english": "workout", "chinese": "锻炼" },
-  { "id": 28, "english": "fitness", "chinese": "健康" },
-  { "id": 29, "english": "fell into", "chinese": "陷入（fell是fall的过去式）" },
-  { "id": 30, "english": "slump", "chinese": "暴跌" },
-  { "id": 31, "english": "deteriorate", "chinese": "恶化，变化" },
-  { "id": 32, "english": "repeat", "chinese": "重复" },
-  { "id": 33, "english": "optimal", "chinese": "合适的" }
+  {
+    "english": "instruct",
+    "chinese": "指导，指示",
+    "id": 1
+  },
+  {
+    "english": "supervision",
+    "chinese": "监督，管理",
+    "id": 2
+  },
+  {
+    "english": "supervisior",
+    "chinese": "监督者，管理者",
+    "id": 3
+  },
+  {
+    "english": "adequate",
+    "chinese": "足够的，适当的",
+    "id": 4
+  },
+  {
+    "english": "merit",
+    "chinese": "优点",
+    "id": 5
+  },
+  {
+    "english": "appreciate",
+    "chinese": "感激，欣赏",
+    "id": 6
+  },
+  {
+    "english": "colleague",
+    "chinese": "同事",
+    "id": 7
+  },
+  {
+    "english": "offend",
+    "chinese": "冒犯，得罪",
+    "id": 8
+  },
+  {
+    "english": "urge",
+    "chinese": "敦促，催促",
+    "id": 9
+  },
+  {
+    "english": "degree",
+    "chinese": "度，学位",
+    "id": 10
+  },
+  {
+    "english": "profound",
+    "chinese": "深刻的，极大的",
+    "id": 11
+  },
+  {
+    "english": "realize",
+    "chinese": "实现，获得，意识到",
+    "id": 12
+  },
+  {
+    "english": "branch",
+    "chinese": "分支",
+    "id": 13
+  },
+  {
+    "english": "conductive",
+    "chinese": "有助于，有益于",
+    "id": 14
+  },
+  {
+    "english": "institution",
+    "chinese": "机构，制度",
+    "id": 15
+  },
+  {
+    "english": "picnic",
+    "chinese": "野餐，轻松",
+    "id": 16
+  },
+  {
+    "english": "trustworthy",
+    "chinese": "值得信任的",
+    "id": 17
+  },
+  {
+    "english": "prevent",
+    "chinese": "阻止",
+    "id": 18
+  },
+  {
+    "english": "hacker",
+    "chinese": "黑客",
+    "id": 19
+  },
+  {
+    "english": "crack",
+    "chinese": "爆发，裂开",
+    "id": 20
+  },
+  {
+    "english": "guide",
+    "chinese": "指导",
+    "id": 21
+  },
+  {
+    "english": "guideline",
+    "chinese": "指导方针",
+    "id": 22
+  },
+  {
+    "english": "anticipate",
+    "chinese": "预期，预料",
+    "id": 23
+  },
+  {
+    "english": "intricacy",
+    "chinese": "错综复杂",
+    "id": 24
+  },
+  {
+    "english": "incentive",
+    "chinese": "激励",
+    "id": 25
+  },
+  {
+    "english": "application",
+    "chinese": "申请，用途，应用软件",
+    "id": 26
+  },
+  {
+    "english": "workout",
+    "chinese": "锻炼",
+    "id": 27
+  },
+  {
+    "english": "fitness",
+    "chinese": "健康",
+    "id": 28
+  },
+  {
+    "english": "fell into",
+    "chinese": "陷入（fell是fall的过去式）",
+    "id": 29
+  },
+  {
+    "english": "slump",
+    "chinese": "暴跌",
+    "id": 30
+  },
+  {
+    "english": "deteriorate",
+    "chinese": "恶化，变化",
+    "id": 31
+  },
+  {
+    "english": "repeat",
+    "chinese": "重复",
+    "id": 32
+  },
+  {
+    "english": "optimal",
+    "chinese": "合适的",
+    "id": 33
+  },
+  {
+    "english": "respond",
+    "chinese": "反应，回应",
+    "id": 34
+  },
+  {
+    "english": "express",
+    "chinese": "表达",
+    "id": 35
+  },
+  {
+    "english": "fact",
+    "chinese": "事实",
+    "id": 36
+  },
+  {
+    "english": "differently than",
+    "chinese": "与.....不同",
+    "id": 37
+  },
+  {
+    "english": "word",
+    "chinese": "字词",
+    "id": 38
+  },
+  {
+    "english": "convey",
+    "chinese": "传递，运输",
+    "id": 39
+  },
+  {
+    "english": "possibility",
+    "chinese": "可能性",
+    "id": 40
+  },
+  {
+    "english": "offer",
+    "chinese": "提供",
+    "id": 41
+  },
+  {
+    "english": "new insight",
+    "chinese": "新的见解",
+    "id": 42
+  },
+  {
+    "english": "impact",
+    "chinese": "影响",
+    "id": 43
+  },
+  {
+    "english": "statement",
+    "chinese": "陈述",
+    "id": 44
+  },
+  {
+    "english": "versus",
+    "chinese": "与....相对",
+    "id": 45
+  },
+  {
+    "english": "assert",
+    "chinese": "声称",
+    "id": 46
+  },
+  {
+    "english": "present",
+    "chinese": "提供，出席",
+    "id": 47
+  },
+  {
+    "english": "false",
+    "chinese": "假的",
+    "id": 48
+  },
+  {
+    "english": "deliberate",
+    "chinese": "故意的，深思熟虑的",
+    "id": 49
+  },
+  {
+    "english": "as is the case with",
+    "chinese": "与.....一样",
+    "id": 50
+  },
+  {
+    "english": "deceptive",
+    "chinese": "欺骗性的",
+    "id": 51
+  },
+  {
+    "english": "advertisment",
+    "chinese": "广告",
+    "id": 52
+  },
+  {
+    "english": "aggravated",
+    "chinese": "使严重，使恶化",
+    "id": 53
+  },
+  {
+    "english": "individual",
+    "chinese": "个人",
+    "id": 54
+  },
+  {
+    "english": "correct",
+    "chinese": "正确的",
+    "id": 55
+  },
+  {
+    "english": "separate",
+    "chinese": "使分离",
+    "id": 56
+  },
+  {
+    "english": "factual",
+    "chinese": "真实的，事实的",
+    "id": 57
+  },
+  {
+    "english": "speculative",
+    "chinese": "猜测的，推测的",
+    "id": 58
+  },
+  {
+    "english": "especially",
+    "chinese": "尤其，特别",
+    "id": 59
+  },
+  {
+    "english": "as",
+    "chinese": "因为",
+    "id": 60
+  },
+  {
+    "english": "evoke",
+    "chinese": "引起，唤起",
+    "id": 61
+  },
+  {
+    "english": "distinct",
+    "chinese": "明显的，不同的",
+    "id": 62
+  },
+  {
+    "english": "process",
+    "chinese": "处理",
+    "id": 63
+  },
+  {
+    "english": "content",
+    "chinese": "内容",
+    "id": 64
+  },
+  {
+    "english": "indicator",
+    "chinese": "标志",
+    "id": 65
+  },
+  {
+    "english": "uncertainty",
+    "chinese": "不确定性",
+    "id": 66
+  },
+  {
+    "english": "intend to",
+    "chinese": "计划去...;打算",
+    "id": 67
+  },
+  {
+    "english": "ascertain",
+    "chinese": "确定，查明，弄清",
+    "id": 68
+  },
+  {
+    "english": "compute",
+    "chinese": "计算",
+    "id": 69
+  },
+  {
+    "english": "scenarios",
+    "chinese": "场景",
+    "id": 70
+  },
+  {
+    "english": "exemplifies",
+    "chinese": "是.....的典型",
+    "id": 71
+  },
+  {
+    "english": "opposed",
+    "chinese": "相反的",
+    "id": 72
+  },
+  {
+    "english": "activated",
+    "chinese": "激活",
+    "id": 73
+  },
+  {
+    "english": "increase",
+    "chinese": "增加",
+    "id": 74
+  },
+  {
+    "english": "powerfully",
+    "chinese": "强烈的",
+    "id": 75
+  },
+  {
+    "english": "engagement",
+    "chinese": "参与",
+    "id": 76
+  },
+  {
+    "english": "phrase",
+    "chinese": "短语",
+    "id": 77
+  },
+  {
+    "english": "rule",
+    "chinese": "占首要地位，规章",
+    "id": 78
+  },
+  {
+    "english": "region",
+    "chinese": "地区",
+    "id": 79
+  },
+  {
+    "english": "involve",
+    "chinese": "参与",
+    "id": 80
+  },
+  {
+    "english": "discourse",
+    "chinese": "话语",
+    "id": 81
+  },
+  {
+    "english": "distinguish",
+    "chinese": "区分",
+    "id": 82
+  },
+  {
+    "english": "futher",
+    "chinese": "此外",
+    "id": 83
+  },
+  {
+    "english": "robust",
+    "chinese": "强烈的",
+    "id": 84
+  },
+  {
+    "english": "inhibit",
+    "chinese": "阻碍，抑制",
+    "id": 85
+  },
+  {
+    "english": "manuscript",
+    "chinese": "手稿",
+    "id": 86
+  },
+  {
+    "english": "republican",
+    "chinese": "共和党的",
+    "id": 87
+  },
+  {
+    "english": "decade",
+    "chinese": "十年",
+    "id": 88
+  },
+  {
+    "english": "relentless",
+    "chinese": "不停的",
+    "id": 89
+  },
+  {
+    "english": "propagation",
+    "chinese": "传播，宣传",
+    "id": 90
+  },
+  {
+    "english": "simple",
+    "chinese": "简单",
+    "id": 91
+  },
+  {
+    "english": "popularity",
+    "chinese": "流行，受欢迎的",
+    "id": 92
+  },
+  {
+    "english": "while",
+    "chinese": "尽管，虽然，与......同时",
+    "id": 93
+  },
+  {
+    "english": "cult",
+    "chinese": "崇拜",
+    "id": 94
+  },
+  {
+    "english": "attract",
+    "chinese": "吸引",
+    "id": 95
+  },
+  {
+    "english": "critic",
+    "chinese": "批评家",
+    "id": 96
+  },
+  {
+    "english": "lack",
+    "chinese": "缺乏",
+    "id": 97
+  },
+  {
+    "english": "obvious",
+    "chinese": "明显的",
+    "id": 98
+  },
+  {
+    "english": "rival",
+    "chinese": "对手",
+    "id": 99
+  },
+  {
+    "english": "democratic",
+    "chinese": "民主党的",
+    "id": 100
+  },
+  {
+    "english": "politician",
+    "chinese": "政客",
+    "id": 101
+  },
+  {
+    "english": "tend to",
+    "chinese": "倾向于",
+    "id": 102
+  },
+  {
+    "english": "campaign",
+    "chinese": "举办活动",
+    "id": 103
+  },
+  {
+    "english": "left behind",
+    "chinese": "被遗留",
+    "id": 104
+  },
+  {
+    "english": "tax cuts",
+    "chinese": "减税",
+    "id": 105
+  },
+  {
+    "english": "encouraging",
+    "chinese": "鼓励",
+    "id": 106
+  },
+  {
+    "english": "political",
+    "chinese": "政治",
+    "id": 107
+  },
+  {
+    "english": "painful",
+    "chinese": "惨痛的",
+    "id": 108
+  },
+  {
+    "english": "lesson",
+    "chinese": "教训，课",
+    "id": 109
+  },
+  {
+    "english": "point to",
+    "chinese": "指向",
+    "id": 110
+  },
+  {
+    "english": "promising",
+    "chinese": "有希望的",
+    "id": 111
+  },
+  {
+    "english": "candidate",
+    "chinese": "候选人，候选方案",
+    "id": 112
+  },
+  {
+    "english": "wage",
+    "chinese": "报酬=paycheck=compensation",
+    "id": 113
+  },
+  {
+    "english": "set aside",
+    "chinese": "搁置",
+    "id": 114
+  },
+  {
+    "english": "for the moment",
+    "chinese": "暂且",
+    "id": 115
+  },
+  {
+    "english": "familiar",
+    "chinese": "熟悉的",
+    "id": 116
+  },
+  {
+    "english": "arguement",
+    "chinese": "理由，争论",
+    "id": 117
+  },
+  {
+    "english": "fairness",
+    "chinese": "公平",
+    "id": 118
+  },
+  {
+    "english": "fuel",
+    "chinese": "刺激",
+    "id": 119
+  },
+  {
+    "english": "engine",
+    "chinese": "引擎",
+    "id": 120
+  },
+  {
+    "english": "perhaps",
+    "chinese": "可能",
+    "id": 121
+  },
+  {
+    "english": "illustration",
+    "chinese": "实现",
+    "id": 122
+  },
+  {
+    "english": "decision",
+    "chinese": "决定",
+    "id": 123
+  },
+  {
+    "english": "production",
+    "chinese": "产量",
+    "id": 124
+  },
+  {
+    "english": "premium",
+    "chinese": "额外的费用",
+    "id": 125
+  },
+  {
+    "english": "workforce",
+    "chinese": "劳动力",
+    "id": 126
+  },
+  {
+    "english": "expect",
+    "chinese": "期待",
+    "id": 127
+  },
+  {
+    "english": "unexpect",
+    "chinese": "想不到的",
+    "id": 128
+  },
+  {
+    "english": "factory",
+    "chinese": "工厂",
+    "id": 129
+  },
+  {
+    "english": "custom",
+    "chinese": "习俗，惯例",
+    "id": 130
+  },
+  {
+    "english": "customer",
+    "chinese": "顾客",
+    "id": 131
+  },
+  {
+    "english": "logic",
+    "chinese": "逻辑",
+    "id": 132
+  },
+  {
+    "english": "hold （",
+    "chinese": "理论，观点）站的住脚的，成立",
+    "id": 133
+  },
+  {
+    "english": "comsumption",
+    "chinese": "消费",
+    "id": 134
+  },
+  {
+    "english": "drive",
+    "chinese": "推动",
+    "id": 135
+  },
+  {
+    "english": "paid",
+    "chinese": "领取薪水的",
+    "id": 136
+  },
+  {
+    "english": "spend",
+    "chinese": "花费",
+    "id": 137
+  },
+  {
+    "english": "mainstream",
+    "chinese": "主流",
+    "id": 138
+  },
+  {
+    "english": "economist",
+    "chinese": "经济学家",
+    "id": 139
+  },
+  {
+    "english": "insist",
+    "chinese": "坚称",
+    "id": 140
+  },
+  {
+    "english": "sustainable",
+    "chinese": "可持续的",
+    "id": 141
+  },
+  {
+    "english": "through",
+    "chinese": "穿过",
+    "id": 142
+  },
+  {
+    "english": "throughout",
+    "chinese": "遍及",
+    "id": 143
+  },
+  {
+    "english": "effort",
+    "chinese": "努力",
+    "id": 144
+  },
+  {
+    "english": "negotiate",
+    "chinese": "商讨",
+    "id": 145
+  },
+  {
+    "english": "counterproductive",
+    "chinese": "产生相反效果的",
+    "id": 146
+  },
+  {
+    "english": "law",
+    "chinese": "法律",
+    "id": 147
+  },
+  {
+    "english": "raise",
+    "chinese": "增加",
+    "id": 148
+  },
+  {
+    "english": "unemployment",
+    "chinese": "失业",
+    "id": 149
+  },
+  {
+    "english": "in the context of",
+    "chinese": "在.....背景下",
+    "id": 150
+  },
+  {
+    "english": "worldview",
+    "chinese": "世界观",
+    "id": 151
+  },
+  {
+    "english": "prosperity",
+    "chinese": "繁荣",
+    "id": 152
+  },
+  {
+    "english": "invest",
+    "chinese": "投资",
+    "id": 153
+  },
+  {
+    "english": "tug of war",
+    "chinese": "激励争夺",
+    "id": 154
+  },
+  {
+    "english": "evidence",
+    "chinese": "证据",
+    "id": 155
+  },
+  {
+    "english": "widening",
+    "chinese": "使.....扩大",
+    "id": 156
+  },
+  {
+    "english": "gap",
+    "chinese": "差距",
+    "id": 157
+  },
+  {
+    "english": "roughly",
+    "chinese": "大约",
+    "id": 158
+  },
+  {
+    "english": "lag behind",
+    "chinese": "落后",
+    "id": 159
+  },
+  {
+    "english": "provide",
+    "chinese": "提供",
+    "id": 160
+  },
+  {
+    "english": "though",
+    "chinese": "尽管",
+    "id": 161
+  },
+  {
+    "english": "effect",
+    "chinese": "影响",
+    "id": 162
+  },
+  {
+    "english": "affect",
+    "chinese": "影响",
+    "id": 163
+  },
+  {
+    "english": "effective",
+    "chinese": "有效的",
+    "id": 164
+  },
+  {
+    "english": "affective",
+    "chinese": "情感的",
+    "id": 165
+  },
+  {
+    "english": "seem",
+    "chinese": "似乎",
+    "id": 166
+  },
+  {
+    "english": "option",
+    "chinese": "选择",
+    "id": 167
+  },
+  {
+    "english": "available",
+    "chinese": "可用的",
+    "id": 168
+  },
+  {
+    "english": "among",
+    "chinese": "在.....之中",
+    "id": 169
+  },
+  {
+    "english": "measure",
+    "chinese": "措施",
+    "id": 170
+  },
+  {
+    "english": "driving economic growth",
+    "chinese": "推动经济发展",
+    "id": 171
+  },
+  {
+    "english": "aid",
+    "chinese": "帮助",
+    "id": 172
+  },
+  {
+    "english": "prioritize",
+    "chinese": "优先考虑",
+    "id": 173
+  },
+  {
+    "english": "labor",
+    "chinese": "劳动，工作",
+    "id": 174
+  },
+  {
+    "english": "indroduce",
+    "chinese": "介绍",
+    "id": 175
+  },
+  {
+    "english": "extensive",
+    "chinese": "巨大的",
+    "id": 176
+  },
+  {
+    "english": "underlying",
+    "chinese": "表面下的",
+    "id": 177
+  },
+  {
+    "english": "stimulate",
+    "chinese": "刺激",
+    "id": 178
+  },
+  {
+    "english": "outdate",
+    "chinese": "过时的",
+    "id": 179
+  },
+  {
+    "english": "basis",
+    "chinese": "依据",
+    "id": 180
+  },
+  {
+    "english": "distribution",
+    "chinese": "分配",
+    "id": 181
+  },
+  {
+    "english": "fail",
+    "chinese": "失败",
+    "id": 182
+  },
+  {
+    "english": "full",
+    "chinese": "充满",
+    "id": 183
+  },
+  {
+    "english": "fall",
+    "chinese": "降落，下降",
+    "id": 184
+  },
+  {
+    "english": "corresponding",
+    "chinese": "相应的",
+    "id": 185
+  },
+  {
+    "english": "disheartened",
+    "chinese": "沮丧的",
+    "id": 186
+  },
+  {
+    "english": "haves",
+    "chinese": "富人",
+    "id": 187
+  },
+  {
+    "english": "have-nots",
+    "chinese": "穷人",
+    "id": 188
+  },
+  {
+    "english": "witness",
+    "chinese": "目击，目击者",
+    "id": 189
+  },
+  {
+    "english": "well-being",
+    "chinese": "福利",
+    "id": 190
+  },
+  {
+    "english": "seen",
+    "chinese": "看见",
+    "id": 191
+  },
+  {
+    "english": "field",
+    "chinese": "领域",
+    "id": 192
+  },
+  {
+    "english": "direction",
+    "chinese": "方向",
+    "id": 193
+  },
+  {
+    "english": "establish",
+    "chinese": "建立=set up",
+    "id": 194
+  },
+  {
+    "english": "diverse",
+    "chinese": "多样化的",
+    "id": 195
+  },
+  {
+    "english": "indentity",
+    "chinese": "身份",
+    "id": 196
+  },
+  {
+    "english": "editor",
+    "chinese": "编辑",
+    "id": 197
+  },
+  {
+    "english": "psychology",
+    "chinese": "心理学",
+    "id": 198
+  },
+  {
+    "english": "neuroscience",
+    "chinese": "神经科学",
+    "id": 199
+  },
+  {
+    "english": "male",
+    "chinese": "男性，雄性",
+    "id": 200
+  },
+  {
+    "english": "female",
+    "chinese": "女性，雌性",
+    "id": 201
+  },
+  {
+    "english": "based",
+    "chinese": "基本",
+    "id": 202
+  },
+  {
+    "english": "situation",
+    "chinese": "情况",
+    "id": 203
+  },
+  {
+    "english": "amplify",
+    "chinese": "扩大",
+    "id": 204
+  },
+  {
+    "english": "exist",
+    "chinese": "存在",
+    "id": 205
+  },
+  {
+    "english": "existing",
+    "chinese": "已有的",
+    "id": 206
+  },
+  {
+    "english": "equality",
+    "chinese": "平等",
+    "id": 207
+  },
+  {
+    "english": "inequality",
+    "chinese": "不平等",
+    "id": 208
+  },
+  {
+    "english": "account for",
+    "chinese": "占....比例",
+    "id": 209
+  },
+  {
+    "english": "journal",
+    "chinese": "期刊，日记",
+    "id": 210
+  },
+  {
+    "english": "significant",
+    "chinese": "显著的，意义重大的",
+    "id": 211
+  },
+  {
+    "english": "seniority",
+    "chinese": "资历",
+    "id": 212
+  },
+  {
+    "english": "quarter",
+    "chinese": "四分之一",
+    "id": 213
+  },
+  {
+    "english": "crucially",
+    "chinese": "至关重要的",
+    "id": 214
+  },
+  {
+    "english": "overall",
+    "chinese": "总的，所有的",
+    "id": 215
+  },
+  {
+    "english": "stark",
+    "chinese": "明显的",
+    "id": 216
+  },
+  {
+    "english": "reveal",
+    "chinese": "揭示",
+    "id": 217
+  },
+  {
+    "english": "enduring",
+    "chinese": "持续的，长久的",
+    "id": 218
+  },
+  {
+    "english": "disparity",
+    "chinese": "显著差异的",
+    "id": 219
+  },
+  {
+    "english": "gender disparity",
+    "chinese": "性别差异",
+    "id": 220
+  },
+  {
+    "english": "broadly",
+    "chinese": "广泛地",
+    "id": 221
+  },
+  {
+    "english": "broad",
+    "chinese": "广泛的",
+    "id": 222
+  },
+  {
+    "english": "bias",
+    "chinese": "偏见，偏差",
+    "id": 223
+  },
+  {
+    "english": "overrepresent",
+    "chinese": "使代表人数超出比例",
+    "id": 224
+  },
+  {
+    "english": "recognize",
+    "chinese": "认识，认可",
+    "id": 225
+  },
+  {
+    "english": "be arributed to",
+    "chinese": "被归因于....",
+    "id": 226
+  },
+  {
+    "english": "yet",
+    "chinese": "然而",
+    "id": 227
+  },
+  {
+    "english": "disproportionately",
+    "chinese": "不成比例地",
+    "id": 228
+  },
+  {
+    "english": "faculty",
+    "chinese": "全体从业人员",
+    "id": 229
+  },
+  {
+    "english": "imply",
+    "chinese": "暗示，意味着",
+    "id": 230
+  },
+  {
+    "english": "disadvantage",
+    "chinese": "不占优势",
+    "id": 231
+  },
+  {
+    "english": "receive",
+    "chinese": "收到",
+    "id": 232
+  },
+  {
+    "english": "salary",
+    "chinese": "薪酬",
+    "id": 233
+  },
+  {
+    "english": "result",
+    "chinese": "结果，导致",
+    "id": 234
+  },
+  {
+    "english": "publication",
+    "chinese": "出版物",
+    "id": 235
+  },
+  {
+    "english": "grant",
+    "chinese": "给予，授予，补助金，拨款",
+    "id": 236
+  },
+  {
+    "english": "grand",
+    "chinese": "宏伟的",
+    "id": 237
+  },
+  {
+    "english": "appoint",
+    "chinese": "任命，约会",
+    "id": 238
+  },
+  {
+    "english": "barrier",
+    "chinese": "阻碍",
+    "id": 239
+  },
+  {
+    "english": "contribute to",
+    "chinese": "导致",
+    "id": 240
+  },
+  {
+    "english": "whether",
+    "chinese": "无论，是否",
+    "id": 241
+  },
+  {
+    "english": "consciously",
+    "chinese": "意识到地，有意地",
+    "id": 242
+  },
+  {
+    "english": "editoral",
+    "chinese": "编辑的",
+    "id": 243
+  },
+  {
+    "english": "borad",
+    "chinese": "理事会",
+    "id": 244
+  },
+  {
+    "english": "editoral borad",
+    "chinese": "编辑协会",
+    "id": 245
+  },
+  {
+    "english": "academic",
+    "chinese": "学术的",
+    "id": 246
+  },
+  {
+    "english": "exhibit",
+    "chinese": "表现出",
+    "id": 247
+  },
+  {
+    "english": "in view of",
+    "chinese": "考虑到",
+    "id": 248
+  },
+  {
+    "english": "insight",
+    "chinese": "洞察力",
+    "id": 249
+  },
+  {
+    "english": "relevant",
+    "chinese": "相关的",
+    "id": 250
+  },
+  {
+    "english": "backgroud",
+    "chinese": "背景",
+    "id": 251
+  },
+  {
+    "english": "highlight",
+    "chinese": "强调，突出",
+    "id": 252
+  },
+  {
+    "english": "concern",
+    "chinese": "担心，忧虑",
+    "id": 253
+  },
+  {
+    "english": "quite",
+    "chinese": "相当，十分",
+    "id": 254
+  },
+  {
+    "english": "influential",
+    "chinese": "有影响力的",
+    "id": 255
+  },
+  {
+    "english": "simply",
+    "chinese": "完全的，简单的",
+    "id": 256
+  },
+  {
+    "english": "senior",
+    "chinese": "高级的",
+    "id": 257
+  },
+  {
+    "english": "move up",
+    "chinese": "晋级",
+    "id": 258
+  },
+  {
+    "english": "conclusion drawn",
+    "chinese": "得出结论",
+    "id": 259
+  },
+  {
+    "english": "underrepresent",
+    "chinese": "没有充分代表",
+    "id": 260
+  },
+  {
+    "english": "against",
+    "chinese": "反对",
+    "id": 261
+  },
+  {
+    "english": "article",
+    "chinese": "文章",
+    "id": 262
+  },
+  {
+    "english": "instead of",
+    "chinese": "而不是",
+    "id": 263
+  },
+  {
+    "english": "blame",
+    "chinese": "责备",
+    "id": 264
+  },
+  {
+    "english": "blaming",
+    "chinese": "责备",
+    "id": 265
+  },
+  {
+    "english": "strike",
+    "chinese": "取得",
+    "id": 266
+  },
+  {
+    "english": "implement",
+    "chinese": "执行",
+    "id": 267
+  },
+  {
+    "english": "structural",
+    "chinese": "结构上的",
+    "id": 268
+  },
+  {
+    "english": "reform",
+    "chinese": "改革",
+    "id": 269
+  },
+  {
+    "english": "it is said that",
+    "chinese": "据说",
+    "id": 270
+  },
+  {
+    "english": "farm",
+    "chinese": "农场",
+    "id": 271
+  },
+  {
+    "english": "major",
+    "chinese": "主要的，专业",
+    "id": 272
+  },
+  {
+    "english": "purchase",
+    "chinese": "购买",
+    "id": 273
+  },
+  {
+    "english": "purchaser",
+    "chinese": "购买者",
+    "id": 274
+  },
+  {
+    "english": "produce",
+    "chinese": "引起，造成 n.农产品",
+    "id": 275
+  },
+  {
+    "english": "average",
+    "chinese": "平均水平",
+    "id": 276
+  },
+  {
+    "english": "rate",
+    "chinese": "速度，率",
+    "id": 277
+  },
+  {
+    "english": "century",
+    "chinese": "世纪",
+    "id": 278
+  },
+  {
+    "english": "improve",
+    "chinese": "改善，增强，增量",
+    "id": 279
+  },
+  {
+    "english": "remarkably",
+    "chinese": "显著地",
+    "id": 280
+  },
+  {
+    "english": "susceptible",
+    "chinese": "易受影响的",
+    "id": 281
+  },
+  {
+    "english": "fertilizer/fertiliser",
+    "chinese": "化肥",
+    "id": 282
+  },
+  {
+    "english": "impressively",
+    "chinese": "令人印象深刻的",
+    "id": 283
+  },
+  {
+    "english": "crop",
+    "chinese": "庄稼",
+    "id": 284
+  },
+  {
+    "english": "yield",
+    "chinese": "产量",
+    "id": 285
+  },
+  {
+    "english": "prove",
+    "chinese": "证明",
+    "id": 286
+  },
+  {
+    "english": "shift from",
+    "chinese": "从.....转换",
+    "id": 287
+  },
+  {
+    "english": "business",
+    "chinese": "商业，公司",
+    "id": 288
+  },
+  {
+    "english": "bring",
+    "chinese": "带来",
+    "id": 289
+  },
+  {
+    "english": "investigate",
+    "chinese": "调查",
+    "id": 290
+  },
+  {
+    "english": "bear",
+    "chinese": "承受，忍耐",
+    "id": 291
+  },
+  {
+    "english": "consequence",
+    "chinese": "结果，后果",
+    "id": 292
+  },
+  {
+    "english": "change",
+    "chinese": "变化，改变",
+    "id": 293
+  },
+  {
+    "english": "chance",
+    "chinese": "机会",
+    "id": 294
+  },
+  {
+    "english": "per",
+    "chinese": "每；每一；每一个",
+    "id": 295
+  },
+  {
+    "english": "output",
+    "chinese": "产量v.产生",
+    "id": 296
+  },
+  {
+    "english": "farm output per woker",
+    "chinese": "人均农业产量",
+    "id": 297
+  },
+  {
+    "english": "fall short",
+    "chinese": "不足",
+    "id": 298
+  },
+  {
+    "english": "fall far short",
+    "chinese": "远远不足",
+    "id": 299
+  },
+  {
+    "english": "in the long term",
+    "chinese": "从长远来看",
+    "id": 300
+  },
+  {
+    "english": "potential",
+    "chinese": "潜力的",
+    "id": 301
+  },
+  {
+    "english": "owing to",
+    "chinese": "由于",
+    "id": 302
+  },
+  {
+    "english": "hill",
+    "chinese": "小山",
+    "id": 303
+  },
+  {
+    "english": "central",
+    "chinese": "中心的",
+    "id": 304
+  },
+  {
+    "english": "almost",
+    "chinese": "几乎，差不多",
+    "id": 305
+  },
+  {
+    "english": "deceive",
+    "chinese": "欺骗",
+    "id": 306
+  },
+  {
+    "english": "deception",
+    "chinese": "欺骗",
+    "id": 307
+  },
+  {
+    "english": "glance",
+    "chinese": "一瞥",
+    "id": 308
+  },
+  {
+    "english": "lifeless",
+    "chinese": "无生命的",
+    "id": 309
+  },
+  {
+    "english": "barren",
+    "chinese": "贫瘠的",
+    "id": 310
+  },
+  {
+    "english": "bone-dry",
+    "chinese": "干燥的",
+    "id": 311
+  },
+  {
+    "english": "passersby",
+    "chinese": "过路人",
+    "id": 312
+  },
+  {
+    "english": "humming",
+    "chinese": "精力旺盛的，哼歌",
+    "id": 313
+  },
+  {
+    "english": "heading toward",
+    "chinese": "朝向",
+    "id": 314
+  },
+  {
+    "english": "canyon",
+    "chinese": "峡谷",
+    "id": 315
+  },
+  {
+    "english": "flat",
+    "chinese": "平坦的",
+    "id": 316
+  },
+  {
+    "english": "stretch",
+    "chinese": "拉伸，变长 n.一片",
+    "id": 317
+  },
+  {
+    "english": "distance",
+    "chinese": "距离，远处",
+    "id": 318
+  },
+  {
+    "english": "opt",
+    "chinese": "合适的",
+    "id": 319
+  },
+  {
+    "english": "set for",
+    "chinese": "为......而安排",
+    "id": 320
+  },
+  {
+    "english": "mars",
+    "chinese": "火星",
+    "id": 321
+  },
+  {
+    "english": "overflowing",
+    "chinese": "充满",
+    "id": 322
+  },
+  {
+    "english": "mystery",
+    "chinese": "神秘",
+    "id": 323
+  },
+  {
+    "english": "less than",
+    "chinese": "少于",
+    "id": 324
+  },
+  {
+    "english": "inche",
+    "chinese": "英尺",
+    "id": 325
+  },
+  {
+    "english": "extreme",
+    "chinese": "极其，极端",
+    "id": 326
+  },
+  {
+    "english": "fluctuation",
+    "chinese": "波动，起伏",
+    "id": 327
+  },
+  {
+    "english": "vary",
+    "chinese": "变化，不同",
+    "id": 328
+  },
+  {
+    "english": "vary from",
+    "chinese": "从......不同",
+    "id": 329
+  },
+  {
+    "english": "freeze",
+    "chinese": "结冰",
+    "id": 330
+  },
+  {
+    "english": "freezing",
+    "chinese": "冰冻的，极冷的",
+    "id": 331
+  },
+  {
+    "english": "burning",
+    "chinese": "燃烧 n.炙热的",
+    "id": 332
+  },
+  {
+    "english": "within",
+    "chinese": "在（某段时间）之内",
+    "id": 333
+  },
+  {
+    "english": "vast",
+    "chinese": "巨大的",
+    "id": 334
+  },
+  {
+    "english": "square",
+    "chinese": "正方形的，平方的",
+    "id": 335
+  },
+  {
+    "english": "preserve",
+    "chinese": "保护，保护区",
+    "id": 336
+  },
+  {
+    "english": "folk",
+    "chinese": "人们",
+    "id": 337
+  },
+  {
+    "english": "synonymous",
+    "chinese": "等同于",
+    "id": 338
+  },
+  {
+    "english": "biodiversity",
+    "chinese": "生物多样性的",
+    "id": 339
+  },
+  {
+    "english": "endless",
+    "chinese": "无限的",
+    "id": 340
+  },
+  {
+    "english": "spare",
+    "chinese": "备用的",
+    "id": 341
+  },
+  {
+    "english": "tire",
+    "chinese": "疲惫，轮胎",
+    "id": 342
+  },
+  {
+    "english": "reward",
+    "chinese": "奖励，回报",
+    "id": 343
+  },
+  {
+    "english": "plenty",
+    "chinese": "大量，众多",
+    "id": 344
+  },
+  {
+    "english": "prepare",
+    "chinese": "使做好准备工作",
+    "id": 345
+  },
+  {
+    "english": "preparation",
+    "chinese": "准备工作",
+    "id": 346
+  },
+  {
+    "english": "unit",
+    "chinese": "单位",
+    "id": 347
+  },
+  {
+    "english": "ancient",
+    "chinese": "古老的",
+    "id": 348
+  },
+  {
+    "english": "volcano",
+    "chinese": "火山",
+    "id": 349
+  },
+  {
+    "english": "geological",
+    "chinese": "地质的",
+    "id": 350
+  },
+  {
+    "english": "photographer",
+    "chinese": "摄影师",
+    "id": 351
+  },
+  {
+    "english": "photography",
+    "chinese": "摄影",
+    "id": 352
+  },
+  {
+    "english": "photographs",
+    "chinese": "照片",
+    "id": 353
+  },
+  {
+    "english": "sturdy",
+    "chinese": "结实的",
+    "id": 354
+  },
+  {
+    "english": "steer",
+    "chinese": "驾驶",
+    "id": 355
+  },
+  {
+    "english": "sprinkle",
+    "chinese": "撒",
+    "id": 356
+  },
+  {
+    "english": "sparingly",
+    "chinese": "节省地",
+    "id": 357
+  },
+  {
+    "english": "exactly",
+    "chinese": "精确地，恰好",
+    "id": 358
+  },
+  {
+    "english": "bid",
+    "chinese": "企图得到，努力争取，竞标",
+    "id": 359
+  },
+  {
+    "english": "actress",
+    "chinese": "演员",
+    "id": 360
+  },
+  {
+    "english": "extensively ad",
+    "chinese": "广泛的",
+    "id": 361
+  },
+  {
+    "english": "usage",
+    "chinese": "用法",
+    "id": 362
+  },
+  {
+    "english": "wellbeing",
+    "chinese": "健康，幸福",
+    "id": 363
+  },
+  {
+    "english": "recalling",
+    "chinese": "使想起，召回",
+    "id": 364
+  },
+  {
+    "english": "addict",
+    "chinese": "使上瘾 n.上瘾者",
+    "id": 365
+  },
+  {
+    "english": "break",
+    "chinese": "打破 n.休息",
+    "id": 366
+  },
+  {
+    "english": "hate",
+    "chinese": "厌恶",
+    "id": 367
+  },
+  {
+    "english": "comparison",
+    "chinese": "比较",
+    "id": 368
+  },
+  {
+    "english": "go away",
+    "chinese": "离开",
+    "id": 369
+  },
+  {
+    "english": "once",
+    "chinese": "一次，一旦",
+    "id": 370
+  },
+  {
+    "english": "ditch",
+    "chinese": "摆脱，分离",
+    "id": 371
+  },
+  {
+    "english": "subtle",
+    "chinese": "微妙的，不易察觉的",
+    "id": 372
+  },
+  {
+    "english": "prospect",
+    "chinese": "展望，设想",
+    "id": 373
+  },
+  {
+    "english": "digitisation",
+    "chinese": "数字化",
+    "id": 374
+  },
+  {
+    "english": "gas",
+    "chinese": "燃气",
+    "id": 375
+  },
+  {
+    "english": "bill",
+    "chinese": "账单",
+    "id": 376
+  },
+  {
+    "english": "plot",
+    "chinese": "规划",
+    "id": 377
+  },
+  {
+    "english": "route",
+    "chinese": "路线，途径",
+    "id": 378
+  },
+  {
+    "english": "mercy of",
+    "chinese": "受制于",
+    "id": 379
+  },
+  {
+    "english": "actively",
+    "chinese": "积极的，主动的",
+    "id": 380
+  },
+  {
+    "english": "opting",
+    "chinese": "选择",
+    "id": 381
+  },
+  {
+    "english": "opting out",
+    "chinese": "选择不参与某事",
+    "id": 382
+  },
+  {
+    "english": "matter",
+    "chinese": "事情",
+    "id": 383
+  },
+  {
+    "english": "privilege",
+    "chinese": "特权",
+    "id": 384
+  },
+  {
+    "english": "status",
+    "chinese": "地位",
+    "id": 385
+  },
+  {
+    "english": "leverage",
+    "chinese": "充分利用",
+    "id": 386
+  },
+  {
+    "english": "keep......at bay",
+    "chinese": "使不能靠近",
+    "id": 387
+  },
+  {
+    "english": "suggest",
+    "chinese": "建议，表明",
+    "id": 388
+  },
+  {
+    "english": "profile",
+    "chinese": "形象，轮廓",
+    "id": 389
+  },
+  {
+    "english": "promote",
+    "chinese": "处理",
+    "id": 390
+  },
+  {
+    "english": "expose",
+    "chinese": "暴露",
+    "id": 391
+  },
+  {
+    "english": "cruel",
+    "chinese": "残酷的",
+    "id": 392
+  },
+  {
+    "english": "comment",
+    "chinese": "评论，意见",
+    "id": 393
+  },
+  {
+    "english": "mail",
+    "chinese": "邮件",
+    "id": 394
+  },
+  {
+    "english": "rape",
+    "chinese": "强奸",
+    "id": 395
+  },
+  {
+    "english": "threat",
+    "chinese": "威胁",
+    "id": 396
+  },
+  {
+    "english": "rest of us",
+    "chinese": "我们其他人",
+    "id": 397
+  },
+  {
+    "english": "publicise",
+    "chinese": "宣传",
+    "id": 398
+  },
+  {
+    "english": "digital",
+    "chinese": "数字的",
+    "id": 399
+  },
+  {
+    "english": "device",
+    "chinese": "装备",
+    "id": 400
+  },
+  {
+    "english": "divide",
+    "chinese": "差异，不同",
+    "id": 401
+  },
+  {
+    "english": "broadbone",
+    "chinese": "宽带",
+    "id": 402
+  },
+  {
+    "english": "exclusion",
+    "chinese": "排除在外，不包括在内的人",
+    "id": 403
+  },
+  {
+    "english": "champion",
+    "chinese": "冠军，支持",
+    "id": 404
+  },
+  {
+    "english": "frontier",
+    "chinese": "前沿领域",
+    "id": 405
+  },
+  {
+    "english": "irritate",
+    "chinese": "使不耐烦的",
+    "id": 406
+  },
+  {
+    "english": "consequently",
+    "chinese": "因此，结果",
+    "id": 407
+  },
+  {
+    "english": "worth",
+    "chinese": "值得",
+    "id": 408
+  },
+  {
+    "english": "delet",
+    "chinese": "删除",
+    "id": 409
+  },
+  {
+    "english": "infinite",
+    "chinese": "无限的，无穷的",
+    "id": 410
+  },
+  {
+    "english": "sence",
+    "chinese": "感觉",
+    "id": 411
+  },
+  {
+    "english": "breed",
+    "chinese": "导致，孕育",
+    "id": 412
+  },
+  {
+    "english": "access",
+    "chinese": "入口，通道",
+    "id": 413
+  },
+  {
+    "english": "initiative",
+    "chinese": "倡议",
+    "id": 414
+  },
+  {
+    "english": "underprivileged",
+    "chinese": "弱势群体",
+    "id": 415
+  },
+  {
+    "english": "desperately",
+    "chinese": "极需的",
+    "id": 416
+  },
+  {
+    "english": "detrimental",
+    "chinese": "有害的",
+    "id": 417
+  },
+  {
+    "english": "switch off",
+    "chinese": "关闭",
+    "id": 418
+  },
+  {
+    "english": "switch on",
+    "chinese": "开启",
+    "id": 419
+  },
+  {
+    "english": "refrain",
+    "chinese": "克制，避免",
+    "id": 420
+  },
+  {
+    "english": "seriously",
+    "chinese": "严肃的",
+    "id": 421
+  },
+  {
+    "english": "aware",
+    "chinese": "意识到的",
+    "id": 422
+  },
+  {
+    "english": "farther",
+    "chinese": "更远的",
+    "id": 423
+  }
 ]
