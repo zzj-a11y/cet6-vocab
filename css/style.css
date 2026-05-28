@@ -1,0 +1,147 @@
+/* === Reset === */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background: #f0f2f5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  color: #1a1a2e;
+}
+
+/* === CSS Variables — default iPhone === */
+:root {
+  --container-width: 430px;
+  --container-radius: 20px;
+  --font-base: 14px;
+  --font-word: 26px;
+  --font-option: 16px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --color-primary: #4A90D9;
+  --color-success: #27AE60;
+  --color-danger: #E74C3C;
+  --color-bg: #ffffff;
+  --color-text: #1a1a2e;
+  --color-text-light: #666;
+  --color-border: #e0e0e0;
+  --color-tab-active: #4A90D9;
+  --color-tab-inactive: #999;
+}
+
+/* === Layout Switcher === */
+.layout-bar {
+  display: flex;
+  gap: 8px;
+  padding: 12px 16px;
+  background: #fff;
+  border-radius: 12px;
+  margin: 16px 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.layout-btn {
+  padding: 8px 16px;
+  border: 2px solid var(--color-border);
+  border-radius: 8px;
+  background: #fff;
+  cursor: pointer;
+  font-size: 13px;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+.layout-btn:hover { border-color: var(--color-primary); }
+.layout-btn.active {
+  background: var(--color-primary);
+  color: #fff;
+  border-color: var(--color-primary);
+}
+
+/* === App Container === */
+.app-container {
+  width: var(--container-width);
+  min-height: 800px;
+  background: var(--color-bg);
+  border-radius: var(--container-radius);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: width 0.35s ease;
+  position: relative;
+}
+
+/* iPhone 15 Pro Max */
+.app-container[data-layout="iphone"] {
+  --container-width: 430px;
+  --font-base: 14px;
+  --font-word: 26px;
+  --font-option: 15px;
+}
+
+/* iPad Air 11" */
+.app-container[data-layout="ipad"] {
+  --container-width: 820px;
+  --font-base: 17px;
+  --font-word: 36px;
+  --font-option: 18px;
+}
+
+/* MacBook Neo 13" */
+.app-container[data-layout="macbook"] {
+  --container-width: 1280px;
+  --font-base: 18px;
+  --font-word: 44px;
+  --font-option: 20px;
+}
+
+/* === Page Content === */
+.page-content {
+  flex: 1;
+  padding: var(--spacing-lg);
+  overflow-y: auto;
+  font-size: var(--font-base);
+}
+
+/* === Tab Bar === */
+.tab-bar {
+  display: flex;
+  border-top: 1px solid var(--color-border);
+  background: #fafafa;
+  padding: 8px 0;
+  padding-bottom: max(8px, env(safe-area-inset-bottom));
+}
+.tab-btn {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 6px 0;
+  color: var(--color-tab-inactive);
+  transition: color 0.2s;
+  position: relative;
+}
+.tab-btn.active { color: var(--color-tab-active); }
+.tab-icon { font-size: 20px; }
+.tab-label { font-size: 11px; }
+
+.badge {
+  position: absolute;
+  top: 0;
+  right: calc(50% - 24px);
+  background: var(--color-danger);
+  color: #fff;
+  font-size: 10px;
+  min-width: 18px;
+  height: 18px;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 5px;
+}
