@@ -8,6 +8,7 @@ const App = {
 
   init() {
     this.loadData();
+    this.updateWrongBadge();
     this.bindLayoutButtons();
     this.bindTabButtons();
     this.switchTab('quiz');
@@ -16,7 +17,7 @@ const App = {
   /* === Data Persistence === */
   loadData() {
     const saved = JSON.parse(localStorage.getItem('cet6_words') || 'null');
-    this.words = saved || [...DEFAULT_WORDS];
+    this.words = saved || DEFAULT_WORDS.map(w => ({...w}));
     this.wrongIds = JSON.parse(localStorage.getItem('cet6_wrong') || '[]');
     this.favoriteIds = JSON.parse(localStorage.getItem('cet6_fav') || '[]');
   },
@@ -92,7 +93,7 @@ const App = {
   },
 
   switchTab(tab) {
-    if (this.reviewMode) return;
+    if (this.reviewMode && tab !== 'quiz') return;
     this.currentTab = tab;
     document.querySelectorAll('.tab-btn').forEach(b => {
       b.classList.toggle('active', b.dataset.tab === tab);

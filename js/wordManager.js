@@ -92,7 +92,7 @@ const WordManagerPage = {
 
     document.getElementById('resetWordsBtn').addEventListener('click', () => {
       if (confirm('确定恢复为默认词汇表？自定义添加的单词将丢失。')) {
-        App.words = [...DEFAULT_WORDS];
+        App.words = DEFAULT_WORDS.map(w => ({...w}));
         App.saveWords();
         this.render(container);
       }
