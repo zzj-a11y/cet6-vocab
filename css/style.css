@@ -848,3 +848,222 @@ body {
 .page-content::-webkit-scrollbar-thumb:hover {
   background: var(--color-text-muted);
 }
+
+/* ============================================
+   Mode Switch Bar
+   ============================================ */
+.mode-switch {
+  display: flex;
+  padding: 4px;
+  gap: 4px;
+  background: var(--color-primary-bg);
+  border-radius: var(--radius-md);
+  margin-bottom: 20px;
+}
+.mode-switch-btn {
+  flex: 1;
+  padding: 10px 14px;
+  border: 2px solid transparent;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  transition: all var(--transition-fast);
+  font-family: var(--font-body);
+  min-height: 44px;
+}
+.mode-switch-btn:hover {
+  background: rgba(255,255,255,0.6);
+  color: var(--color-primary);
+}
+.mode-switch-btn.active {
+  background: var(--color-primary);
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(91,95,239,0.2);
+}
+
+/* ============================================
+   Multi-Select Quiz
+   ============================================ */
+.multi-hint {
+  text-align: center;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-danger);
+  margin-bottom: 20px;
+  margin-top: -24px;
+}
+
+.multi-option {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 20px;
+  border: var(--border-width) solid var(--color-border-light);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  cursor: pointer;
+  font-size: var(--font-option);
+  font-weight: 500;
+  color: var(--color-text);
+  transition: all var(--transition-fast);
+  user-select: none;
+  min-height: 56px;
+  box-shadow: 0 2px 8px rgba(79,70,229,0.03);
+}
+.multi-option:hover {
+  border-color: var(--color-primary-light);
+  background: var(--color-primary-bg);
+}
+.multi-option.selected {
+  border-color: var(--color-primary);
+  background: var(--color-primary-bg);
+  box-shadow: 0 0 0 3px rgba(91,95,239,0.10);
+}
+
+/* Multi Checkbox */
+.multi-checkbox {
+  width: 24px;
+  height: 24px;
+  border-radius: 7px;
+  border: 3px solid var(--color-border);
+  background: var(--color-surface);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+  font-size: 13px;
+  font-weight: 800;
+}
+.multi-option.selected .multi-checkbox {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #fff;
+}
+.multi-option.selected .multi-checkbox::after {
+  content: '✓';
+}
+
+/* Multi Reveal States */
+.multi-option.correct-reveal {
+  border-color: var(--color-success);
+  background: var(--color-success-bg);
+}
+.multi-option.correct-reveal .multi-checkbox {
+  background: var(--color-success);
+  border-color: var(--color-success);
+}
+.multi-option.correct-reveal .multi-checkbox::after {
+  content: '✓';
+  color: #fff;
+}
+.multi-option.missed-reveal {
+  border-color: var(--color-warning);
+  background: var(--color-warning-bg);
+}
+.multi-option.missed-reveal .multi-checkbox {
+  background: var(--color-warning);
+  border-color: var(--color-warning);
+}
+.multi-option.missed-reveal .multi-checkbox::after {
+  content: '!';
+  color: #fff;
+}
+.multi-option.wrong-reveal {
+  border-color: var(--color-danger);
+  background: var(--color-danger-bg);
+}
+.multi-option.wrong-reveal .multi-checkbox {
+  background: var(--color-danger);
+  border-color: var(--color-danger);
+}
+.multi-option.wrong-reveal .multi-checkbox::after {
+  content: '✕';
+  color: #fff;
+}
+
+/* Multi Submit Button */
+.btn-submit {
+  padding: 12px 32px;
+  background: var(--color-primary);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  font-family: var(--font-body);
+  min-height: 48px;
+  box-shadow: 0 4px 14px rgba(91,95,239,0.25);
+}
+.btn-submit:hover {
+  background: #4F46E5;
+  transform: translateY(-1px);
+}
+
+/* Multi Result */
+.multi-result {
+  margin-top: 20px;
+  text-align: center;
+}
+.result-msg {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.result-msg.correct { color: var(--color-success); }
+.result-msg.partial { color: var(--color-warning); }
+.result-msg.wrong { color: var(--color-danger); }
+
+.multi-legend {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 8px 0;
+}
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  color: var(--color-text-muted);
+}
+.legend-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+.dot-correct { background: var(--color-success); }
+.dot-missed { background: var(--color-warning); }
+.dot-wrong { background: var(--color-danger); }
+
+.btn-next {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 10px 32px;
+  background: var(--color-surface);
+  color: var(--color-primary);
+  border: 3px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  font-family: var(--font-body);
+  min-height: 44px;
+}
+.btn-next:hover {
+  background: var(--color-primary-bg);
+  border-color: var(--color-primary);
+}
+
+/* Multi Fav positioning */
+.multi-fav {
+  margin-right: 12px;
+}
