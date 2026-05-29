@@ -1,0 +1,127 @@
+<div style="padding: 24px; max-width: 640px; margin: 0 auto; font-family: -apple-system, sans-serif;">
+  <h2 style="margin: 0 0 8px 0; font-size: 20px;">进度环位置选择</h2>
+  <p style="color: #666; font-size: 13px; margin: 0 0 24px 0;">点击选择你喜欢的位置</p>
+
+  <!-- Position A: Below options, next to fav button -->
+  <div class="option-card" data-option="A" style="border: 3px solid #E0E7FF; border-radius: 18px; padding: 20px; margin-bottom: 16px; cursor: pointer; transition: all 0.2s; background: #fff;" onmouseover="if(!this.classList.contains('picked'))this.style.borderColor='#818CF8'" onmouseout="if(!this.classList.contains('picked'))this.style.borderColor='#E0E7FF'" onclick="togglePick(this)">
+    <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+      <span style="background: #EEF2FF; color: #5B5FEF; padding: 4px 10px; border-radius: 8px; font-weight: 700; font-size: 13px;">A</span>
+      <span style="font-weight: 700; font-size: 16px;">选项下方 — 和收藏按钮同行</span>
+    </div>
+
+    <div style="background: #FAFBFF; border-radius: 14px; padding: 20px; border: 2px solid #E0E7FF;">
+      <div style="font-family: 'Baloo 2', cursive; font-size: 28px; font-weight: 800; text-align: center; color: #1E1B4B; margin-bottom: 20px;">profound</div>
+      <div style="display: flex; flex-direction: column; gap: 8px; margin-bottom: 16px;">
+        <div style="padding: 14px 16px; border: 3px solid #22C55E; border-radius: 14px; font-size: 15px; color: #15803D; background: #ECFDF5;">A. 监督，管理</div>
+        <div style="padding: 14px 16px; border: 3px solid #E0E7FF; border-radius: 14px; font-size: 15px;">B. 深刻的，极大的</div>
+        <div style="padding: 14px 16px; border: 3px solid #E0E7FF; border-radius: 14px; font-size: 15px;">C. 指导，指示</div>
+        <div style="padding: 14px 16px; border: 3px solid #E0E7FF; border-radius: 14px; font-size: 15px;">D. 冒犯，得罪</div>
+      </div>
+      <!-- Position A: progress next to fav -->
+      <div style="display: flex; align-items: center; justify-content: center; gap: 24px;">
+        <button style="padding: 12px 24px; border: 3px solid #E0E7FF; border-radius: 14px; background: #fff; font-size: 14px; font-weight: 600; color: #6366F1; cursor: pointer;">🤍 收藏</button>
+        <!-- Progress ring inline -->
+        <div style="display: flex; align-items: center; gap: 10px; border: 3px solid #E0E7FF; border-radius: 16px; padding: 8px 16px; background: #fff;">
+          <div style="position: relative; width: 36px; height: 36px;">
+            <svg viewBox="0 0 36 36" style="width: 36px; height: 36px; transform: rotate(-90deg);">
+              <circle cx="18" cy="18" r="14" fill="none" stroke="#E0E7FF" stroke-width="3"/>
+              <circle cx="18" cy="18" r="14" fill="none" stroke="#22C55E" stroke-width="3" stroke-dasharray="88" stroke-dashoffset="20" stroke-linecap="round"/>
+            </svg>
+            <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 800; color: #5B5FEF;">15</div>
+          </div>
+          <div style="font-size: 12px; color: #818CF8;">15/423</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Position B: Between word and options -->
+  <div class="option-card" data-option="B" style="border: 3px solid #E0E7FF; border-radius: 18px; padding: 20px; margin-bottom: 16px; cursor: pointer; transition: all 0.2s; background: #fff;" onmouseover="if(!this.classList.contains('picked'))this.style.borderColor='#818CF8'" onmouseout="if(!this.classList.contains('picked'))this.style.borderColor='#E0E7FF'" onclick="togglePick(this)">
+    <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+      <span style="background: #EEF2FF; color: #5B5FEF; padding: 4px 10px; border-radius: 8px; font-weight: 700; font-size: 13px;">B</span>
+      <span style="font-weight: 700; font-size: 16px;">顶部 — 单词和选项之间</span>
+    </div>
+
+    <div style="background: #FAFBFF; border-radius: 14px; padding: 20px; border: 2px solid #E0E7FF;">
+      <div style="font-family: 'Baloo 2', cursive; font-size: 28px; font-weight: 800; text-align: center; color: #1E1B4B; margin-bottom: 8px;">profound</div>
+      <!-- Position B: progress between word and options -->
+      <div style="display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 20px;">
+        <div style="position: relative; width: 36px; height: 36px;">
+          <svg viewBox="0 0 36 36" style="width: 36px; height: 36px; transform: rotate(-90deg);">
+            <circle cx="18" cy="18" r="14" fill="none" stroke="#E0E7FF" stroke-width="3"/>
+            <circle cx="18" cy="18" r="14" fill="none" stroke="#22C55E" stroke-width="3" stroke-dasharray="88" stroke-dashoffset="25" stroke-linecap="round"/>
+          </svg>
+          <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 800; color: #5B5FEF;">15</div>
+        </div>
+        <div style="font-size: 13px; color: #818CF8; font-weight: 600;">423 词中已完成 <span style="color: #22C55E;">15</span> 词 · 还需 408 词</div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 8px; margin-bottom: 12px;">
+        <div style="padding: 14px 16px; border: 3px solid #E0E7FF; border-radius: 14px; font-size: 15px;">A. 监督，管理</div>
+        <div style="padding: 14px 16px; border: 3px solid #E0E7FF; border-radius: 14px; font-size: 15px;">B. 深刻的，极大的</div>
+        <div style="padding: 14px 16px; border: 3px solid #E0E7FF; border-radius: 14px; font-size: 15px;">C. 指导，指示</div>
+        <div style="padding: 14px 16px; border: 3px solid #E0E7FF; border-radius: 14px; font-size: 15px;">D. 冒犯，得罪</div>
+      </div>
+      <div style="text-align: center;">
+        <button style="padding: 12px 24px; border: 3px solid #E0E7FF; border-radius: 14px; background: #fff; font-size: 14px; font-weight: 600; color: #6366F1; cursor: pointer;">🤍 收藏</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Position C: Fixed bottom, above tab bar -->
+  <div class="option-card" data-option="C" style="border: 3px solid #E0E7FF; border-radius: 18px; padding: 20px; margin-bottom: 16px; cursor: pointer; transition: all 0.2s; background: #fff;" onmouseover="if(!this.classList.contains('picked'))this.style.borderColor='#818CF8'" onmouseout="if(!this.classList.contains('picked'))this.style.borderColor='#E0E7FF'" onclick="togglePick(this)">
+    <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+      <span style="background: #EEF2FF; color: #5B5FEF; padding: 4px 10px; border-radius: 8px; font-weight: 700; font-size: 13px;">C</span>
+      <span style="font-weight: 700; font-size: 16px;">固定底部 — Tab 栏上方，始终可见</span>
+    </div>
+
+    <div style="background: #FAFBFF; border-radius: 14px; overflow: hidden; border: 2px solid #E0E7FF;">
+      <div style="padding: 20px;">
+        <div style="font-family: 'Baloo 2', cursive; font-size: 28px; font-weight: 800; text-align: center; color: #1E1B4B; margin-bottom: 20px;">profound</div>
+        <div style="display: flex; flex-direction: column; gap: 8px; margin-bottom: 16px;">
+          <div style="padding: 14px 16px; border: 3px solid #EF4444; border-radius: 14px; font-size: 15px; color: #B91C1C; background: #FEF2F2;">A. 监督，管理</div>
+          <div style="padding: 14px 16px; border: 3px solid #22C55E; border-radius: 14px; font-size: 15px; color: #15803D; background: #ECFDF5;">B. 深刻的，极大的</div>
+          <div style="padding: 14px 16px; border: 3px solid #E0E7FF; border-radius: 14px; font-size: 15px;">C. 指导，指示</div>
+          <div style="padding: 14px 16px; border: 3px solid #E0E7FF; border-radius: 14px; font-size: 15px;">D. 冒犯，得罪</div>
+        </div>
+        <div style="text-align: center;"><button style="padding: 12px 24px; border: 3px solid #E0E7FF; border-radius: 14px; background: #fff; font-size: 14px; font-weight: 600; color: #6366F1; cursor: pointer;">🤍 收藏</button></div>
+      </div>
+      <!-- Position C: progress bar between content and tab bar -->
+      <div style="background: #fff; border-top: 2px solid #E0E7FF; padding: 12px 20px; display: flex; align-items: center; gap: 14px;">
+        <div style="position: relative; width: 40px; height: 40px; flex-shrink: 0;">
+          <svg viewBox="0 0 36 36" style="width: 40px; height: 40px; transform: rotate(-90deg);">
+            <circle cx="18" cy="18" r="14" fill="none" stroke="#E0E7FF" stroke-width="3"/>
+            <circle cx="18" cy="18" r="14" fill="none" stroke="#22C55E" stroke-width="3" stroke-dasharray="88" stroke-dashoffset="38" stroke-linecap="round"/>
+          </svg>
+          <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 800; color: #5B5FEF;">15</div>
+        </div>
+        <div style="flex: 1;">
+          <div style="font-size: 12px; color: #818CF8; font-weight: 600; margin-bottom: 2px;">答题进度</div>
+          <div style="height: 6px; background: #E0E7FF; border-radius: 3px; overflow: hidden;">
+            <div style="height: 100%; width: 3.5%; background: linear-gradient(90deg, #5B5FEF, #22C55E); border-radius: 3px;"></div>
+          </div>
+          <div style="display: flex; justify-content: space-between; font-size: 10px; color: #C7D2FE; margin-top: 3px;">
+            <span>15/423</span><span>3.5%</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p style="font-size: 12px; color: #999; text-align: center; margin-top: 16px;">点击卡片选中你的偏好位置</p>
+</div>
+
+<script>
+function togglePick(card) {
+  // Single select
+  document.querySelectorAll('.option-card').forEach(c => {
+    c.classList.remove('picked');
+    c.style.borderColor = '#E0E7FF';
+    c.style.background = '#fff';
+    c.style.boxShadow = 'none';
+  });
+  card.classList.add('picked');
+  card.style.borderColor = '#5B5FEF';
+  card.style.background = '#F8F9FF';
+  card.style.boxShadow = '0 0 0 3px rgba(91,95,239,0.12)';
+}
+</script>

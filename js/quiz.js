@@ -56,7 +56,7 @@ const QuizPage = {
     this.bindModeSwitch(container);
     document.getElementById('quizFavBtn').addEventListener('click', () => {
       App.toggleFavorite(word.id);
-      this.render(container);
+      document.getElementById('quizFavBtn').innerHTML = App.isFavorite(word.id) ? '⭐ 已收藏' : '🤍 收藏';
     });
     container.querySelectorAll('.option-btn').forEach(btn => {
       btn.addEventListener('click', (e) => this.handleSingleAnswer(e, container));
@@ -95,7 +95,7 @@ const QuizPage = {
         if (idx > -1) App.reviewRemaining.splice(idx, 1);
       }
     }
-    setTimeout(() => this.afterAnswer(container), 1200);
+    setTimeout(() => this.afterAnswer(container), 400);
   },
 
   /* ======== Multi Select ======== */
@@ -131,7 +131,7 @@ const QuizPage = {
     this.bindModeSwitch(container);
     document.getElementById('quizFavBtn').addEventListener('click', () => {
       App.toggleFavorite(word.id);
-      this.render(container);
+      document.getElementById('quizFavBtn').innerHTML = App.isFavorite(word.id) ? '⭐ 已收藏' : '🤍 收藏';
     });
     container.querySelectorAll('.multi-option').forEach(el => {
       el.addEventListener('click', () => {
