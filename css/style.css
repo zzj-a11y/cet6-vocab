@@ -166,12 +166,28 @@ body {
   border: 2px solid var(--color-border-light);
 }
 
-/* Device: iPhone 15 Pro Max */
 .app-container[data-layout="iphone"] {
   --container-width: 430px;
   --font-base: 15px;
-  --font-word: 30px;
+  --font-word: 28px;
   --font-option: 16px;
+  --spacing-lg: 20px;
+}
+/* iPhone: 加大选项触控区 */
+[data-layout="iphone"] .option-btn {
+  min-height: 56px;
+  padding: 20px 16px;
+}
+[data-layout="iphone"] .quiz-area {
+  padding-top: 24px;
+}
+[data-layout="iphone"] .quiz-word {
+  margin-bottom: 24px;
+}
+/* iPhone: 隐藏桌面端元素 */
+[data-layout="iphone"] .desktop-sidebar,
+[data-layout="iphone"] .desktop-stats {
+  display: none;
 }
 
 /* Device: iPad Air 11" */
