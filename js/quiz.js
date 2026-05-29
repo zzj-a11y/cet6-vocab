@@ -3,6 +3,7 @@ const QuizPage = {
   options: [],
   answered: false,
   multiSelected: new Set(),
+  history: [],
 
   render(container) {
     const word = this.pickWord();
@@ -50,6 +51,7 @@ const QuizPage = {
           <button class="fav-btn" id="quizFavBtn">
             ${App.isFavorite(word.id) ? '⭐ 已收藏' : '🤍 收藏'}
           </button>
+          ${this.history.length > 0 ? '<button class="btn-prev" id="prevBtn">⬅ 上一题</button>' : ''}
         </div>
       </div>`;
 
@@ -58,6 +60,11 @@ const QuizPage = {
       App.toggleFavorite(word.id);
       document.getElementById('quizFavBtn').innerHTML = App.isFavorite(word.id) ? '⭐ 已收藏' : '🤍 收藏';
     });
+    if (this.history.length > 0) {
+      document.getElementById('prevBtn').addEventListener('click', () => {
+        this.showPrevious(container);
+      });
+    }
     container.querySelectorAll('.option-btn').forEach(btn => {
       btn.addEventListener('click', (e) => this.handleSingleAnswer(e, container));
     });
@@ -124,6 +131,7 @@ const QuizPage = {
             ${App.isFavorite(word.id) ? '⭐ 已收藏' : '🤍 收藏'}
           </button>
           <button class="btn-submit" id="multiSubmitBtn">确认提交</button>
+          ${this.history.length > 0 ? '<button class="btn-prev multi-prev" id="prevBtn">⬅ 上一题</button>' : ''}
         </div>
         <div class="multi-result" id="multiResult"></div>
       </div>`;
@@ -133,6 +141,11 @@ const QuizPage = {
       App.toggleFavorite(word.id);
       document.getElementById('quizFavBtn').innerHTML = App.isFavorite(word.id) ? '⭐ 已收藏' : '🤍 收藏';
     });
+    if (this.history.length > 0) {
+      document.getElementById('prevBtn').addEventListener('click', () => {
+        this.showPrevious(container);
+      });
+    }
     container.querySelectorAll('.multi-option').forEach(el => {
       el.addEventListener('click', () => {
         if (this.answered) return;
@@ -293,14 +306,129 @@ const QuizPage = {
       alert('错题复习完成！错题本已清空。');
       App.switchTab('wrongbook');
     } else {
+      this.history.push({
+        word: this.currentWord,
+        options: this.options,
+        answered: this.answered,
+        multiSelected: new Set(this.multiSelected)
+      });
       this.render(container);
     }
+  },
+
+  showPrevious(container) {
+    if (this.history.length === 0) return;
+    const prev = this.history.pop();
+    this.currentWord = prev.word;
+    this.options = prev.options;
+    this.answered = true;
+    this.multiSelected = prev.multiSelected;
+
+    if (App.quizMode === 'multi') {
+      this.showPreviousMulti(container, prev);
+    } else {
+      this.showPreviousSingle(container, prev);
+    }
+  },
+
+  showPreviousSingle(container, prev) {
+    const word = this.currentWord;
+    const letters = ['A', 'B', 'C', 'D'];
+
+    container.innerHTML = `
+      <div class="mode-switch">
+        <button class="mode-switch-btn active" data-mode="single">📝 单选题</button>
+        <button class="mode-switch-btn" data-mode="multi">✅ 多选释义</button>
+      </div>
+      <div class="quiz-area">
+        <div class="quiz-word">${word.english}</div>
+        ${this.renderProgressRing()}
+        <div class="quiz-options" id="quizOptions">
+          ${prev.options.map((opt, i) => {
+            const wasCorrect = opt.isCorrect;
+            const wasPicked = i === prev.options.findIndex(o => o === prev.options.find(x => x.isCorrect));
+            let cls = '';
+            if (wasCorrect) cls = 'correct';
+            return `
+            <button class="option-btn ${cls}" data-index="${i}" data-is-correct="${opt.isCorrect}" disabled>
+              <span class="option-letter">${letters[i]}</span>
+              <span class="option-text">${opt.chinese}</span>
+            </button>`;
+          }).join('')}
+        </div>
+        <div class="quiz-actions">
+          <button class="fav-btn" id="quizFavBtn">
+            ${App.isFavorite(word.id) ? '⭐ 已收藏' : '🤍 收藏'}
+          </button>
+          <button class="btn-next" id="prevNextBtn">下一题 →</button>
+        </div>
+      </div>`;
+
+    this.bindModeSwitch(container);
+    document.getElementById('quizFavBtn').addEventListener('click', () => {
+      App.toggleFavorite(word.id);
+      document.getElementById('quizFavBtn').innerHTML = App.isFavorite(word.id) ? '⭐ 已收藏' : '🤍 收藏';
+    });
+    document.getElementById('prevNextBtn').addEventListener('click', () => {
+      this.render(container);
+    });
+  },
+
+  showPreviousMulti(container, prev) {
+    const word = this.currentWord;
+
+    container.innerHTML = `
+      <div class="mode-switch">
+        <button class="mode-switch-btn" data-mode="single">📝 单选题</button>
+        <button class="mode-switch-btn active" data-mode="multi">✅ 多选释义</button>
+      </div>
+      <div class="quiz-area">
+        <div class="quiz-word">${word.english}</div>
+        <div class="multi-hint">请选出所有正确的中文释义</div>
+        ${this.renderProgressRing()}
+        <div class="quiz-options" id="quizOptions">
+          ${prev.options.map((opt, i) => {
+            let cls = '';
+            if (opt.isCorrect && prev.multiSelected.has(i)) cls = 'correct-reveal';
+            else if (opt.isCorrect && !prev.multiSelected.has(i)) cls = 'missed-reveal';
+            else if (!opt.isCorrect && prev.multiSelected.has(i)) cls = 'wrong-reveal';
+            return `
+            <div class="multi-option ${cls}" data-index="${i}" data-is-correct="${opt.isCorrect}">
+              <div class="multi-checkbox"></div>
+              <span class="option-text">${opt.chinese}</span>
+            </div>`;
+          }).join('')}
+        </div>
+        <div class="quiz-actions">
+          <button class="fav-btn multi-fav" id="quizFavBtn">
+            ${App.isFavorite(word.id) ? '⭐ 已收藏' : '🤍 收藏'}
+          </button>
+          <button class="btn-next" id="prevNextBtn">下一题 →</button>
+        </div>
+        <div class="multi-result" id="multiResult">
+          <div class="multi-legend">
+            <span class="legend-item"><span class="legend-dot dot-correct"></span> 选对</span>
+            <span class="legend-item"><span class="legend-dot dot-missed"></span> 遗漏</span>
+            <span class="legend-item"><span class="legend-dot dot-wrong"></span> 选错</span>
+          </div>
+        </div>
+      </div>`;
+
+    this.bindModeSwitch(container);
+    document.getElementById('quizFavBtn').addEventListener('click', () => {
+      App.toggleFavorite(word.id);
+      document.getElementById('quizFavBtn').innerHTML = App.isFavorite(word.id) ? '⭐ 已收藏' : '🤍 收藏';
+    });
+    document.getElementById('prevNextBtn').addEventListener('click', () => {
+      this.render(container);
+    });
   },
 
   bindModeSwitch(container) {
     container.querySelectorAll('.mode-switch-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         App.quizMode = btn.dataset.mode;
+        this.history = [];
         this.render(container);
       });
     });
