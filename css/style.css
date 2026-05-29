@@ -194,16 +194,93 @@ body {
 .app-container[data-layout="ipad"] {
   --container-width: 820px;
   --font-base: 17px;
-  --font-word: 40px;
-  --font-option: 18px;
+  --font-word: 36px;
+  --font-option: 16px;
+  --spacing-lg: 32px;
+}
+/* iPad: 2×2 选项网格 */
+[data-layout="ipad"] .quiz-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  max-width: 100%;
+}
+[data-layout="ipad"] .option-btn {
+  min-height: 100px;
+  justify-content: center;
+  flex-direction: column;
+  gap: 8px;
+}
+[data-layout="ipad"] .option-letter {
+  width: 28px;
+  height: 28px;
+  font-size: 14px;
+}
+/* iPad: 操作区底部横排 */
+[data-layout="ipad"] .quiz-actions {
+  width: 100%;
+  justify-content: center;
+  gap: 16px;
+}
+/* iPad: 隐藏桌面端元素 */
+[data-layout="ipad"] .desktop-sidebar,
+[data-layout="ipad"] .desktop-stats {
+  display: none;
 }
 
 /* Device: MacBook Neo 13" */
 .app-container[data-layout="macbook"] {
   --container-width: 1280px;
   --font-base: 18px;
-  --font-word: 48px;
-  --font-option: 20px;
+  --font-word: 42px;
+  --font-option: 18px;
+  --spacing-lg: 36px;
+}
+/* MacBook: 三栏 flex 布局 */
+.app-container[data-layout="macbook"] {
+  flex-direction: row;
+}
+/* MacBook: 显示左侧导航栏 */
+[data-layout="macbook"] .desktop-sidebar {
+  display: flex;
+  flex-direction: column;
+  width: 170px;
+  border-right: 2px solid var(--color-border-light);
+  background: var(--color-primary-bg);
+  padding: 16px 12px;
+  flex-shrink: 0;
+}
+/* MacBook: 内容区 flex:1 */
+[data-layout="macbook"] .page-content {
+  flex: 1;
+  overflow-y: auto;
+}
+/* MacBook: 显示右侧统计面板 */
+[data-layout="macbook"] .desktop-stats {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  border-left: 2px solid var(--color-border-light);
+  background: var(--color-primary-bg);
+  padding: 16px 12px;
+  overflow-y: auto;
+  flex-shrink: 0;
+}
+/* MacBook: 隐藏底部 tab bar */
+[data-layout="macbook"] .tab-bar {
+  display: none;
+}
+/* MacBook: 选项 2×2 网格 */
+[data-layout="macbook"] .quiz-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  max-width: 560px;
+}
+[data-layout="macbook"] .option-btn {
+  min-height: 56px;
+  justify-content: flex-start;
+  gap: 12px;
 }
 
 /* ============================================
@@ -1185,3 +1262,34 @@ body {
 .progress-ring-text strong {
   color: var(--color-text-secondary);
 }
+
+/* ============================================
+   Desktop Sidebar & Stats
+   ============================================ */
+.desktop-sidebar,
+.desktop-stats { display: none; }
+.sidebar-brand { font-family: var(--font-heading); font-size: 18px; font-weight: 800; text-align: center; margin-bottom: 16px; color: var(--color-primary); }
+.sidebar-progress { text-align: center; margin-bottom: 12px; }
+.sidebar-nav { display: flex; flex-direction: column; gap: 4px; }
+.sidebar-nav-item { display: flex; align-items: center; gap: 8px; padding: 10px 12px; border: none; border-radius: 10px; background: transparent; cursor: pointer; font-size: 13px; color: var(--color-text-muted); transition: all var(--transition-fast); width: 100%; text-align: left; font-family: var(--font-body); min-height: 40px; }
+.sidebar-nav-item:hover { background: rgba(255,255,255,0.6); }
+.sidebar-nav-item.active { background: var(--color-primary); color: #fff; font-weight: 600; }
+.sidebar-badge { margin-left: auto; background: var(--color-danger); color: #fff; border-radius: 8px; padding: 0 6px; font-size: 10px; font-weight: 700; min-width: 18px; text-align: center; }
+.sidebar-nav-item.active .sidebar-badge { background: rgba(255,255,255,0.3); }
+.sidebar-fab { margin-top: auto; display: flex; justify-content: center; gap: 4px; padding-top: 12px; }
+
+.stat-card { background: #fff; border: 2px solid var(--color-border-light); border-radius: 14px; padding: 16px; text-align: center; margin-bottom: 10px; }
+.stat-card.gradient-purple { background: linear-gradient(135deg, #5B5FEF, #818CF8); color: #fff; border: none; }
+.stat-card.gradient-green { background: linear-gradient(135deg, #22C55E, #4ADE80); color: #fff; border: none; }
+.stat-card.gradient-amber { background: linear-gradient(135deg, #F59E0B, #FBBF24); color: #fff; border: none; }
+.stat-card-label { font-size: 10px; opacity: 0.8; margin-bottom: 2px; }
+.stat-card-value { font-size: 28px; font-weight: 800; line-height: 1.1; }
+.stat-card-sub { font-size: 10px; opacity: 0.7; margin-top: 2px; }
+.stat-progress { margin-bottom: 10px; }
+.stat-progress-label { display: flex; justify-content: space-between; font-size: 10px; color: var(--color-text-muted); margin-bottom: 3px; }
+.stat-progress-bar { height: 6px; background: var(--color-border-light); border-radius: 3px; overflow: hidden; }
+.stat-progress-fill { height: 100%; border-radius: 3px; }
+.stat-recent { background: #fff; border: 2px solid var(--color-border-light); border-radius: 12px; padding: 10px; }
+.stat-recent-label { font-size: 10px; color: var(--color-text-muted); margin-bottom: 6px; text-align: center; }
+.stat-recent-tags { display: flex; flex-wrap: wrap; gap: 4px; justify-content: center; }
+.stat-tag { background: var(--color-primary-bg); color: var(--color-primary); padding: 2px 7px; border-radius: 6px; font-size: 10px; font-weight: 600; }
