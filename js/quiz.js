@@ -37,6 +37,7 @@ const QuizPage = {
       </div>
       <div class="quiz-area">
         <div class="quiz-word">${word.english}</div>
+        ${this.renderProgressRing()}
         <div class="quiz-options" id="quizOptions">
           ${this.options.map((opt, i) => `
             <button class="option-btn" data-index="${i}" data-is-correct="${opt.isCorrect}">
@@ -88,6 +89,7 @@ const QuizPage = {
       App.addWrong(this.currentWord.id);
       if (App.reviewMode) App.reviewRemaining.push(this.currentWord);
     } else {
+      App.addCompleted(this.currentWord.id);
       if (App.reviewMode) {
         const idx = App.reviewRemaining.findIndex(w => w.id === this.currentWord.id);
         if (idx > -1) App.reviewRemaining.splice(idx, 1);
@@ -108,6 +110,7 @@ const QuizPage = {
       <div class="quiz-area">
         <div class="quiz-word">${word.english}</div>
         <div class="multi-hint">请选出所有正确的中文释义</div>
+        ${this.renderProgressRing()}
         <div class="quiz-options" id="quizOptions">
           ${this.options.map((opt, i) => `
             <div class="multi-option" data-index="${i}" data-is-correct="${opt.isCorrect}">
@@ -200,6 +203,7 @@ const QuizPage = {
     const resultDiv = document.getElementById('multiResult');
     if (isFullyCorrect) {
       resultDiv.innerHTML = '<div class="result-msg correct">✓ 完全正确！</div>';
+      App.addCompleted(this.currentWord.id);
     } else if (!noWrong) {
       resultDiv.innerHTML = '<div class="result-msg wrong">✗ 选入了错误项</div>';
     } else {
@@ -227,6 +231,39 @@ const QuizPage = {
     document.getElementById('multiNextBtn').addEventListener('click', () => {
       this.afterAnswer(container);
     });
+  },
+
+  renderProgressRing() {
+    const total = App.words.length;
+    const done = App.getCompletedCount();
+    const remaining = total - done;
+    const circumference = 2 * Math.PI * 15;
+    const offset = circumference - (done / Math.max(total, 1)) * circumference;
+
+    return `
+      <div class="progress-ring-area">
+        <div class="progress-ring-wrap">
+          <svg class="progress-ring" viewBox="0 0 36 36">
+            <circle class="progress-ring-bg" cx="18" cy="18" r="15"
+              fill="none" stroke="var(--color-border-light)" stroke-width="3"/>
+            <circle class="progress-ring-fill" cx="18" cy="18" r="15"
+              fill="none" stroke="url(#progressGrad)" stroke-width="3"
+              stroke-dasharray="${circumference}" stroke-dashoffset="${offset}"
+              stroke-linecap="round"/>
+            <defs>
+              <linearGradient id="progressGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="var(--color-primary)"/>
+                <stop offset="100%" stop-color="var(--color-success)"/>
+              </linearGradient>
+            </defs>
+          </svg>
+          <div class="progress-ring-num">${done}</div>
+        </div>
+        <div class="progress-ring-text">
+          <span>${total} 词中已完成 <strong>${done}</strong> 词</span>
+          ${remaining > 0 ? `<span>还需 <strong>${remaining}</strong> 词</span>` : '<span style="color:var(--color-success)">🎉 全部完成！</span>'}
+        </div>
+      </div>`;
   },
 
   /* ======== Shared ======== */
