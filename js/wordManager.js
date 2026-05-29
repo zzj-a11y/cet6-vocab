@@ -14,6 +14,7 @@ const WordManagerPage = {
             <input type="file" id="fileUpload" accept=".txt,.docx,.json" hidden>
           </label>
           <button class="btn-outline" id="exportWordsBtn">📤 导出词汇表</button>
+          <button class="btn-outline" id="resetProgressBtn">🔄 重置进度</button>
           <button class="btn-outline" id="resetWordsBtn">恢复默认</button>
         </div>
 
@@ -117,13 +118,21 @@ const WordManagerPage = {
       }
     });
 
+    document.getElementById('resetProgressBtn').addEventListener('click', () => {
+      if (confirm('确定重置背词进度？已完成的记录将清零。')) {
+        App.clearCompleted();
+        this.render(container);
+      }
+    });
+
     container.querySelectorAll('.del-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         const id = Number(btn.dataset.id);
         App.words = App.words.filter(w => w.id !== id);
         App.wrongIds = App.wrongIds.filter(wid => wid !== id);
         App.favoriteIds = App.favoriteIds.filter(fid => fid !== id);
-        App.saveWords(); App.saveWrong(); App.saveFavorites();
+        App.completedIds = App.completedIds.filter(cid => cid !== id);
+        App.saveWords(); App.saveWrong(); App.saveFavorites(); App.saveCompleted();
         this.render(container);
       });
     });
