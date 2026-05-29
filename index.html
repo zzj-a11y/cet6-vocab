@@ -21,8 +21,31 @@
         <button class="layout-menu-item" data-layout="macbook">💻 MacBook Neo</button>
       </div>
     </div>
+    <!-- 桌面端：左侧导航栏（仅 MacBook 显示） -->
+    <div class="desktop-sidebar" id="desktopSidebar">
+      <div class="sidebar-brand">CET-6</div>
+      <div class="sidebar-progress" id="sidebarProgress"></div>
+      <nav class="sidebar-nav">
+        <button class="sidebar-nav-item active" data-tab="quiz" id="sidebarQuizBtn">
+          <span>📝</span> 答题
+        </button>
+        <button class="sidebar-nav-item" data-tab="wrongbook" id="sidebarWrongBtn">
+          <span>❌</span> 错题本 <span class="sidebar-badge" id="sidebarWrongBadge">0</span>
+        </button>
+        <button class="sidebar-nav-item" data-tab="favorites" id="sidebarFavBtn">
+          <span>⭐</span> 收藏本
+        </button>
+        <button class="sidebar-nav-item" data-tab="manage" id="sidebarManageBtn">
+          <span>⚙️</span> 管理
+        </button>
+      </nav>
+      <div class="sidebar-fab" id="sidebarFab"></div>
+    </div>
     <!-- 页面内容区 -->
     <main class="page-content" id="pageContent"></main>
+
+    <!-- 桌面端：右侧统计面板（仅 MacBook 显示） -->
+    <div class="desktop-stats" id="desktopStats"></div>
 
     <!-- 底部 Tab 栏 -->
     <nav class="tab-bar" aria-label="底部导航">
