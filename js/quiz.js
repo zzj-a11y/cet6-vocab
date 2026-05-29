@@ -57,7 +57,7 @@ const QuizPage = {
       App.toggleFavorite(word.id);
       this.render(container);
     });
-    document.querySelectorAll('.option-btn').forEach(btn => {
+    container.querySelectorAll('.option-btn').forEach(btn => {
       btn.addEventListener('click', (e) => this.handleSingleAnswer(e, container));
     });
   },
@@ -79,7 +79,7 @@ const QuizPage = {
     const btn = e.currentTarget;
     const isCorrect = btn.dataset.isCorrect === 'true';
 
-    document.querySelectorAll('.option-btn').forEach(b => {
+    container.querySelectorAll('.option-btn').forEach(b => {
       b.disabled = true;
       if (b.dataset.isCorrect === 'true') b.classList.add('correct');
     });
@@ -130,7 +130,7 @@ const QuizPage = {
       App.toggleFavorite(word.id);
       this.render(container);
     });
-    document.querySelectorAll('.multi-option').forEach(el => {
+    container.querySelectorAll('.multi-option').forEach(el => {
       el.addEventListener('click', () => {
         if (this.answered) return;
         const idx = Number(el.dataset.index);
@@ -188,7 +188,7 @@ const QuizPage = {
     const noWrong = userIndices.every(i => correctSet.has(i));
     const isFullyCorrect = allCorrect && noWrong;
 
-    document.querySelectorAll('.multi-option').forEach(el => {
+    container.querySelectorAll('.multi-option').forEach(el => {
       const idx = Number(el.dataset.index);
       const isCorrectOpt = el.dataset.isCorrect === 'true';
       const isSelected = userSet.has(idx);
@@ -261,7 +261,7 @@ const QuizPage = {
   },
 
   bindModeSwitch(container) {
-    document.querySelectorAll('.mode-switch-btn').forEach(btn => {
+    container.querySelectorAll('.mode-switch-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         App.quizMode = btn.dataset.mode;
         this.render(container);
