@@ -2,6 +2,7 @@ const App = {
   words: [],
   wrongIds: [],
   favoriteIds: [],
+  completedIds: [],
   currentTab: 'quiz',
   quizMode: 'single',
   reviewMode: false,
@@ -21,6 +22,7 @@ const App = {
     this.words = saved || DEFAULT_WORDS.map(w => ({...w}));
     this.wrongIds = JSON.parse(localStorage.getItem('cet6_wrong') || '[]');
     this.favoriteIds = JSON.parse(localStorage.getItem('cet6_fav') || '[]');
+    this.completedIds = JSON.parse(localStorage.getItem('cet6_completed') || '[]');
   },
 
   saveWords() {
@@ -34,6 +36,26 @@ const App = {
 
   saveFavorites() {
     localStorage.setItem('cet6_fav', JSON.stringify(this.favoriteIds));
+  },
+
+  saveCompleted() {
+    localStorage.setItem('cet6_completed', JSON.stringify(this.completedIds));
+  },
+
+  addCompleted(wordId) {
+    if (!this.completedIds.includes(wordId)) {
+      this.completedIds.push(wordId);
+      this.saveCompleted();
+    }
+  },
+
+  getCompletedCount() {
+    return this.completedIds.length;
+  },
+
+  clearCompleted() {
+    this.completedIds = [];
+    this.saveCompleted();
   },
 
   getWrongWords() {
