@@ -10,15 +10,17 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <!-- 布局切换栏 -->
-  <div class="layout-bar">
-    <button class="layout-btn active" data-layout="iphone">📱 iPhone</button>
-    <button class="layout-btn" data-layout="ipad">📋 iPad Air</button>
-    <button class="layout-btn" data-layout="macbook">💻 MacBook Neo</button>
-  </div>
-
   <!-- 主容器 -->
   <div class="app-container" data-layout="iphone" id="appContainer">
+    <!-- 布局 FAB -->
+    <div class="layout-fab" id="layoutFab">
+      <button class="fab-trigger" id="fabTrigger">📱</button>
+      <div class="layout-menu" id="layoutMenu" style="display:none">
+        <button class="layout-menu-item active" data-layout="iphone">📱 iPhone</button>
+        <button class="layout-menu-item" data-layout="ipad">📋 iPad Air</button>
+        <button class="layout-menu-item" data-layout="macbook">💻 MacBook Neo</button>
+      </div>
+    </div>
     <!-- 页面内容区 -->
     <main class="page-content" id="pageContent"></main>
 

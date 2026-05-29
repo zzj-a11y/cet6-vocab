@@ -94,12 +94,27 @@ const App = {
 
   /* === Layout Switching === */
   bindLayoutButtons() {
-    document.querySelectorAll('.layout-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        document.querySelectorAll('.layout-btn').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        document.getElementById('appContainer').setAttribute('data-layout', btn.dataset.layout);
+    const trigger = document.getElementById('fabTrigger');
+    const menu = document.getElementById('layoutMenu');
+
+    trigger.addEventListener('click', (e) => {
+      e.stopPropagation();
+      menu.style.display = menu.style.display === 'none' ? 'block' : 'none';
+    });
+
+    menu.querySelectorAll('.layout-menu-item').forEach(item => {
+      item.addEventListener('click', () => {
+        const layout = item.dataset.layout;
+        document.getElementById('appContainer').setAttribute('data-layout', layout);
+        trigger.textContent = item.textContent.trim().charAt(0);
+        menu.querySelectorAll('.layout-menu-item').forEach(i => i.classList.remove('active'));
+        item.classList.add('active');
+        menu.style.display = 'none';
       });
+    });
+
+    document.addEventListener('click', () => {
+      menu.style.display = 'none';
     });
   },
 

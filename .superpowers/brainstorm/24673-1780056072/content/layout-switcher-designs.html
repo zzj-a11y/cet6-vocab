@@ -1,0 +1,160 @@
+<div style="padding: 24px; max-width: 520px; margin: 0 auto; font-family: -apple-system, sans-serif;">
+  <h2 style="margin: 0 0 8px 0; font-size: 18px;">布局切换器重新设计</h2>
+  <p style="color: #666; font-size: 13px; margin: 0 0 20px 0;">目标：把占一整行的按钮栏缩小成一个紧凑的小组件</p>
+
+  <!-- Design A: Floating Action Button -->
+  <div class="option-card" data-option="A" style="border: 3px solid #E0E7FF; border-radius: 18px; padding: 20px; margin-bottom: 16px; cursor: pointer; transition: all 0.2s; background: #fff;" onmouseover="if(!this.classList.contains('picked'))this.style.borderColor='#818CF8'" onmouseout="if(!this.classList.contains('picked'))this.style.borderColor='#E0E7FF'" onclick="togglePick(this)">
+    <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 14px;">
+      <span style="background: #EEF2FF; color: #5B5FEF; padding: 4px 10px; border-radius: 8px; font-weight: 700; font-size: 13px;">A</span>
+      <span style="font-weight: 700; font-size: 15px;">悬浮圆钮 + 下拉菜单</span>
+    </div>
+    <p style="color: #818CF8; font-size: 12px; margin: 0 0 12px 0;">右上角一个小圆钮，点击展开三个选项</p>
+
+    <!-- Mock app frame -->
+    <div style="background: #fff; border: 2px solid #E0E7FF; border-radius: 24px; overflow: hidden; width: 320px; margin: 0 auto; position: relative; min-height: 480px;">
+      <!-- Top bar: compact -->
+      <div style="display: flex; justify-content: flex-end; align-items: center; padding: 12px 16px;">
+        <!-- FAB trigger -->
+        <div style="position: relative;">
+          <button id="fab-btn-A" style="width: 40px; height: 40px; border-radius: 50%; background: #fff; border: 2px solid #E0E7FF; cursor: pointer; font-size: 16px; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(0,0,0,0.06); transition: all 0.2s; padding: 0;" onclick="toggleMenu('menu-A')" onmouseover="this.style.borderColor='#5B5FEF'" onmouseout="this.style.borderColor='#E0E7FF'">📱</button>
+          <!-- Dropdown (hidden by default, shown in mock) -->
+          <div id="menu-A" style="position: absolute; top: 48px; right: 0; background: #fff; border: 2px solid #E0E7FF; border-radius: 16px; box-shadow: 0 8px 30px rgba(0,0,0,0.12); overflow: hidden; z-index: 10; min-width: 180px; display: block;">
+            <div style="padding: 6px;">
+              <div style="padding: 10px 14px; border-radius: 10px; background: #5B5FEF; color: #fff; font-size: 13px; font-weight: 600; cursor: pointer; margin-bottom: 2px; display: flex; align-items: center; gap: 8px;"><span>📱</span> iPhone</div>
+              <div style="padding: 10px 14px; border-radius: 10px; background: transparent; color: #1E1B4B; font-size: 13px; font-weight: 500; cursor: pointer; margin-bottom: 2px; display: flex; align-items: center; gap: 8px;" onmouseover="this.style.background='#EEF2FF'" onmouseout="this.style.background='transparent'"><span>📋</span> iPad Air</div>
+              <div style="padding: 10px 14px; border-radius: 10px; background: transparent; color: #1E1B4B; font-size: 13px; font-weight: 500; cursor: pointer; display: flex; align-items: center; gap: 8px;" onmouseover="this.style.background='#EEF2FF'" onmouseout="this.style.background='transparent'"><span>💻</span> MacBook Neo</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Quiz content -->
+      <div style="padding: 0 20px;">
+        <div style="text-align: center; padding: 30px 0;">
+          <div style="font-family: 'Baloo 2', cursive; font-size: 24px; font-weight: 800; color: #1E1B4B; margin-bottom: 24px;">profound</div>
+          <div style="display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 20px; font-size: 11px; color: #818CF8;">
+            <svg width="30" height="30" viewBox="0 0 36 36" style="transform: rotate(-90deg);"><circle cx="18" cy="18" r="14" fill="none" stroke="#E0E7FF" stroke-width="3"/><circle cx="18" cy="18" r="14" fill="none" stroke="#22C55E" stroke-width="3" stroke-dasharray="88" stroke-dashoffset="80" stroke-linecap="round"/></svg>
+            <span>423词中已完成5词</span>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 6px;">
+            <div style="padding: 12px 16px; border: 3px solid #E0E7FF; border-radius: 14px; font-size: 14px; text-align: left;">A. 监督，管理</div>
+            <div style="padding: 12px 16px; border: 3px solid #E0E7FF; border-radius: 14px; font-size: 14px; text-align: left;">B. 深刻的，极大的</div>
+            <div style="padding: 12px 16px; border: 3px solid #E0E7FF; border-radius: 14px; font-size: 14px; text-align: left;">C. 指导，指示</div>
+            <div style="padding: 12px 16px; border: 3px solid #E0E7FF; border-radius: 14px; font-size: 14px; text-align: left;">D. 冒犯，得罪</div>
+          </div>
+        </div>
+      </div>
+      <!-- Tab bar -->
+      <div style="display: flex; border-top: 2px solid #E0E7FF; padding: 8px 0; position: absolute; bottom: 0; left:0; right:0; background: #fff;">
+        <div style="flex:1; text-align:center; font-size:11px; color:#5B5FEF;">📝 答题</div>
+        <div style="flex:1; text-align:center; font-size:11px; color:#818CF8;">❌ 错题本</div>
+        <div style="flex:1; text-align:center; font-size:11px; color:#818CF8;">⭐ 收藏本</div>
+        <div style="flex:1; text-align:center; font-size:11px; color:#818CF8;">⚙️ 管理</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Design B: Compact Pill Chip -->
+  <div class="option-card" data-option="B" style="border: 3px solid #E0E7FF; border-radius: 18px; padding: 20px; margin-bottom: 16px; cursor: pointer; transition: all 0.2s; background: #fff;" onmouseover="if(!this.classList.contains('picked'))this.style.borderColor='#818CF8'" onmouseout="if(!this.classList.contains('picked'))this.style.borderColor='#E0E7FF'" onclick="togglePick(this)">
+    <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 14px;">
+      <span style="background: #EEF2FF; color: #5B5FEF; padding: 4px 10px; border-radius: 8px; font-weight: 700; font-size: 13px;">B</span>
+      <span style="font-weight: 700; font-size: 15px;">紧凑胶囊 + 点击展开</span>
+    </div>
+    <p style="color: #818CF8; font-size: 12px; margin: 0 0 12px 0;">顶部居中一个胶囊按钮，显示当前设备，点击变成三个并排小胶囊</p>
+
+    <div style="background: #fff; border: 2px solid #E0E7FF; border-radius: 24px; overflow: hidden; width: 320px; margin: 0 auto; min-height: 480px; position: relative;">
+      <!-- Top bar: pill chip (expanded state) -->
+      <div style="display: flex; justify-content: center; padding: 10px 16px;">
+        <div style="display: flex; gap: 4px; background: #EEF2FF; border-radius: 20px; padding: 4px; border: 2px solid #E0E7FF;">
+          <button style="width: 36px; height: 36px; border-radius: 50%; background: #fff; border: none; cursor: pointer; font-size: 15px; display: flex; align-items: center; justify-content: center; padding: 0;" onmouseover="this.style.background='#E0E7FF'" onmouseout="this.style.background='#fff'">📱</button>
+          <button style="width: 36px; height: 36px; border-radius: 50%; background: #5B5FEF; border: none; cursor: pointer; font-size: 15px; display: flex; align-items: center; justify-content: center; padding: 0; color: #fff;">📋</button>
+          <button style="width: 36px; height: 36px; border-radius: 50%; background: #fff; border: none; cursor: pointer; font-size: 15px; display: flex; align-items: center; justify-content: center; padding: 0;" onmouseover="this.style.background='#E0E7FF'" onmouseout="this.style.background='#fff'">💻</button>
+        </div>
+      </div>
+      <div style="padding: 0 20px;">
+        <div style="text-align: center; padding: 20px 0;">
+          <div style="font-family: 'Baloo 2', cursive; font-size: 24px; font-weight: 800; color: #1E1B4B; margin-bottom: 24px;">profound</div>
+          <div style="display: flex; flex-direction: column; gap: 6px;">
+            <div style="padding: 12px 16px; border: 3px solid #E0E7FF; border-radius: 14px; font-size: 14px; text-align: left;">A. 监督，管理</div>
+            <div style="padding: 12px 16px; border: 3px solid #E0E7FF; border-radius: 14px; font-size: 14px; text-align: left;">B. 深刻的，极大的</div>
+            <div style="padding: 12px 16px; border: 3px solid #E0E7FF; border-radius: 14px; font-size: 14px; text-align: left;">C. 指导，指示</div>
+            <div style="padding: 12px 16px; border: 3px solid #E0E7FF; border-radius: 14px; font-size: 14px; text-align: left;">D. 冒犯，得罪</div>
+          </div>
+        </div>
+      </div>
+      <div style="display: flex; border-top: 2px solid #E0E7FF; padding: 8px 0; position: absolute; bottom: 0; left:0; right:0; background: #fff;">
+        <div style="flex:1; text-align:center; font-size:11px; color:#5B5FEF;">📝 答题</div>
+        <div style="flex:1; text-align:center; font-size:11px; color:#818CF8;">❌ 错题本</div>
+        <div style="flex:1; text-align:center; font-size:11px; color:#818CF8;">⭐ 收藏本</div>
+        <div style="flex:1; text-align:center; font-size:11px; color:#818CF8;">⚙️ 管理</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Design C: Corner icon + centered popover -->
+  <div class="option-card" data-option="C" style="border: 3px solid #E0E7FF; border-radius: 18px; padding: 20px; margin-bottom: 16px; cursor: pointer; transition: all 0.2s; background: #fff;" onmouseover="if(!this.classList.contains('picked'))this.style.borderColor='#818CF8'" onmouseout="if(!this.classList.contains('picked'))this.style.borderColor='#E0E7FF'" onclick="togglePick(this)">
+    <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 14px;">
+      <span style="background: #EEF2FF; color: #5B5FEF; padding: 4px 10px; border-radius: 8px; font-weight: 700; font-size: 13px;">C</span>
+      <span style="font-weight: 700; font-size: 15px;">角落图标 + 居中弹窗</span>
+    </div>
+    <p style="color: #818CF8; font-size: 12px; margin: 0 0 12px 0;">右上角小图标，点击弹出居中面板，背景半透明遮罩</p>
+
+    <div style="background: #fff; border: 2px solid #E0E7FF; border-radius: 24px; overflow: hidden; width: 320px; margin: 0 auto; min-height: 480px; position: relative;">
+      <!-- Top bar: icon only -->
+      <div style="display: flex; justify-content: flex-end; padding: 10px 16px;">
+        <button style="width: 34px; height: 34px; border-radius: 50%; background: #fff; border: 2px solid #E0E7FF; cursor: pointer; font-size: 15px; display: flex; align-items: center; justify-content: center; padding: 0; box-shadow: 0 2px 6px rgba(0,0,0,0.05);">📱</button>
+      </div>
+      <div style="padding: 0 20px;">
+        <div style="text-align: center; padding: 20px 0;">
+          <div style="font-family: 'Baloo 2', cursive; font-size: 24px; font-weight: 800; color: #1E1B4B; margin-bottom: 24px;">profound</div>
+          <div style="display: flex; flex-direction: column; gap: 6px;">
+            <div style="padding: 12px 16px; border: 3px solid #E0E7FF; border-radius: 14px; font-size: 14px; text-align: left;">A. 监督，管理</div>
+            <div style="padding: 12px 16px; border: 3px solid #E0E7FF; border-radius: 14px; font-size: 14px; text-align: left;">B. 深刻的，极大的</div>
+            <div style="padding: 12px 16px; border: 3px solid #E0E7FF; border-radius: 14px; font-size: 14px; text-align: left;">C. 指导，指示</div>
+            <div style="padding: 12px 16px; border: 3px solid #E0E7FF; border-radius: 14px; font-size: 14px; text-align: left;">D. 冒犯，得罪</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Popup overlay -->
+      <div style="position: absolute; inset: 0; background: rgba(0,0,0,0.3); display: flex; align-items: center; justify-content: center; z-index: 20;">
+        <div style="background: #fff; border-radius: 20px; padding: 24px; width: 220px; box-shadow: 0 12px 40px rgba(0,0,0,0.15); text-align: center;">
+          <div style="font-size: 14px; font-weight: 700; color: #1E1B4B; margin-bottom: 16px;">选择设备布局</div>
+          <div style="display: flex; flex-direction: column; gap: 6px;">
+            <button style="padding: 12px 16px; border: 3px solid #5B5FEF; border-radius: 14px; background: #EEF2FF; cursor: pointer; font-size: 14px; font-weight: 600; color: #5B5FEF; display: flex; align-items: center; gap: 8px;">📱 iPhone</button>
+            <button style="padding: 12px 16px; border: 3px solid #E0E7FF; border-radius: 14px; background: #fff; cursor: pointer; font-size: 14px; font-weight: 500; color: #1E1B4B; display: flex; align-items: center; gap: 8px;" onmouseover="this.style.background='#EEF2FF'" onmouseout="this.style.background='#fff'">📋 iPad Air</button>
+            <button style="padding: 12px 16px; border: 3px solid #E0E7FF; border-radius: 14px; background: #fff; cursor: pointer; font-size: 14px; font-weight: 500; color: #1E1B4B; display: flex; align-items: center; gap: 8px;" onmouseover="this.style.background='#EEF2FF'" onmouseout="this.style.background='#fff'">💻 MacBook Neo</button>
+          </div>
+        </div>
+      </div>
+
+      <div style="display: flex; border-top: 2px solid #E0E7FF; padding: 8px 0; position: absolute; bottom: 0; left:0; right:0; background: #fff;">
+        <div style="flex:1; text-align:center; font-size:11px; color:#5B5FEF;">📝 答题</div>
+        <div style="flex:1; text-align:center; font-size:11px; color:#818CF8;">❌ 错题本</div>
+        <div style="flex:1; text-align:center; font-size:11px; color:#818CF8;">⭐ 收藏本</div>
+        <div style="flex:1; text-align:center; font-size:11px; color:#818CF8;">⚙️ 管理</div>
+      </div>
+    </div>
+  </div>
+
+  <p style="font-size: 12px; color: #999; text-align: center; margin-top: 12px;">点击卡片选中你喜欢的方案</p>
+</div>
+
+<script>
+function togglePick(card) {
+  document.querySelectorAll('.option-card').forEach(c => {
+    c.classList.remove('picked');
+    c.style.borderColor = '#E0E7FF';
+    c.style.background = '#fff';
+    c.style.boxShadow = 'none';
+  });
+  card.classList.add('picked');
+  card.style.borderColor = '#5B5FEF';
+  card.style.background = '#F8F9FF';
+  card.style.boxShadow = '0 0 0 3px rgba(91,95,239,0.12)';
+}
+
+function toggleMenu(id) {
+  var el = document.getElementById(id);
+  el.style.display = el.style.display === 'none' ? 'block' : 'none';
+}
+</script>
